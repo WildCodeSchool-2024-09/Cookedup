@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(209, 240, 225, 0.7);
+}
+
+#home img {
+  height: auto;
+  width: 100%;
+}
+
+#right-flower img {
+  margin-left: 800px;
+  margin-bottom: 60px;
+}
+
+p {
+  text-align: center;
+  width: 50%;
+  font-size: 15px;
+  margin-top: 40px;
+  margin-left: 250px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: D1F0E1s;
+}
