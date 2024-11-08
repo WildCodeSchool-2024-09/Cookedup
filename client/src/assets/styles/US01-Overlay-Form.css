@@ -1,0 +1,17 @@
+.box-container {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80vw;
+}
+
+.smallest-button {
+  width: 5vw;
+  height: 5vh;
+}
+.openFilterButton {
+  position: absolute;
+  right: 0%;
+  padding: 10px;
+}

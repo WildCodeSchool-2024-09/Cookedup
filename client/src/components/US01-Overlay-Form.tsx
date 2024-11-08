@@ -1,4 +1,6 @@
 import { useState } from "react";
+import CloseButton from "react-bootstrap/CloseButton";
+import "../assets/styles/US01-Overlay-Form.css";
 
 function FormWithButton() {
   const [isFormVisible, setIsFormVisible] = useState(false);
@@ -6,20 +8,34 @@ function FormWithButton() {
   const handleButtonClick = () => {
     setIsFormVisible(true);
   };
+  const handleCloseButton = () => {
+    setIsFormVisible(false);
+  };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    alert("Formulaire soumis !");
   };
-
   return (
     <div>
-      <button type="button" onClick={handleButtonClick}>
+      <button
+        className="openFilterButton"
+        type="button"
+        onClick={handleButtonClick}
+      >
         Ouvrir le formulaire
       </button>
       {isFormVisible && (
-        <form onSubmit={handleSubmit}>
+        <form className="box-container" onSubmit={handleSubmit}>
+          <button
+            type="button"
+            onClick={handleCloseButton}
+            className="p-2 bg-dark smallest-button"
+          >
+            {" "}
+            X
+          </button>
           <div>
+            {/* form recipe choice  */}
             <p>envie d'une recette particulière ?</p>
             <label htmlFor="username"> </label>
             <input
@@ -28,6 +44,11 @@ function FormWithButton() {
               id="username"
               name="username"
             />
+            {/* form radio button  */}
+            <div>
+              <h1>mouton</h1>
+            </div>
+            {/* form ingredients choice  */}
             <div className="item-choice">
               <p>Ingredient n°1</p>
               <label htmlFor="username"> </label>
@@ -48,17 +69,17 @@ function FormWithButton() {
               />
             </div>
           </div>
-          <button type="submit">Envoyer</button>
+          {/* form validation and clear button  */}
+          <div>
+            <button type="button" onClick={handleSubmit}>
+              Send
+            </button>
+            <button type="button" onClick={handleSubmit}>
+              Clear
+            </button>
+          </div>
         </form>
       )}
-      <div>
-        <button type="button" onClick={handleSubmit}>
-          Ouvrir le formulaire
-        </button>
-        <button type="button" onClick={handleSubmit}>
-          Ouvrir le formulaire
-        </button>
-      </div>
     </div>
   );
 }
