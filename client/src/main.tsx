@@ -23,11 +23,10 @@ import ShoppingList from "./pages/ShoppingList";
 // You can add more routes as you build out your app!
 const router = createBrowserRouter([
   {
-    path: "/", // The root path
     element: <App />, // Renders the App component for the home page
     children: [
       {
-        path: "/Home",
+        path: "/",
         element: <Home />,
       },
       {
