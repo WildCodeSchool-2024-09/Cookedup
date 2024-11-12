@@ -15,7 +15,6 @@ function RecetteCard({
   cardStars,
   cardHeart,
   cardCart,
-  // addFavorite,
 }: RecetteCardId) {
   return (
     <>
