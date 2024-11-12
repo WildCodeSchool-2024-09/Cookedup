@@ -1,0 +1,28 @@
+.recetteListe {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.recetteCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  background-color: rgba(243, 255, 244, 0.826);
+  gap: 4px;
+  width: 130px;
+  border-radius: 10px;
+}
+
+.foodImg {
+  width: 100%;
+  height: 170px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.starImg {
+  height: 26px;
+  width: 26px;
+}
