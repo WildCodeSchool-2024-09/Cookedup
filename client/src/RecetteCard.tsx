@@ -6,7 +6,7 @@ interface RecetteCardId {
   cardStars: string;
   cardHeart: string;
   cardCart: string;
-  addFavorite: (arg0: string) => void;
+  // addFavorite: (arg0: string) => void;
 }
 
 function RecetteCard({
@@ -15,7 +15,7 @@ function RecetteCard({
   cardStars,
   cardHeart,
   cardCart,
-  addFavorite,
+  // addFavorite,
 }: RecetteCardId) {
   return (
     <>
@@ -27,9 +27,7 @@ function RecetteCard({
         />
         <h3>{recetteTitle}</h3>
         <img src={cardStars} alt={"Recipe difficulty"} className="starImg" />
-        <button onClick={() => addFavorite(recetteTitle)} type={undefined}>
-          {cardHeart}
-        </button>
+        <button type={undefined}>{cardHeart}</button>
         <button type={undefined}>{cardCart}</button>
       </section>
     </>
