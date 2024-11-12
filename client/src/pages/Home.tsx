@@ -1,7 +1,15 @@
+import RecetteCard from "../RecetteCard";
+import RecettesList from "../RecettesArray";
+import "../assets/style/RecetteCard.css";
+
 function Home() {
   return (
     <>
-      <h1>Bienvenue sur Cooked up</h1>
+      <section className="recetteListe">
+        {RecettesList.map((value) => (
+          <RecetteCard key={value.recetteTitle} {...value} />
+        ))}
+      </section>
     </>
   );
 }
