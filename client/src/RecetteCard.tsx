@@ -19,16 +19,16 @@ function RecetteCard({
 }: RecetteCardId) {
   return (
     <>
-      <section className="recetteCard">
+      <section className="recipeCard">
         <img
           src={imgSrc}
           alt={"Food representing the recipe"}
-          className="foodImg"
+          className="food-img"
         />
         <h3>{recetteTitle}</h3>
-        <img src={cardStars} alt={"Recipe difficulty"} className="starImg" />
-        <button type={undefined}>{cardHeart}</button>
-        <button type={undefined}>{cardCart}</button>
+        <img src={cardStars} alt={"Recipe difficulty"} className="star-img" />
+        <button type="button">{cardHeart}</button>
+        <button type="button">{cardCart}</button>
       </section>
     </>
   );
