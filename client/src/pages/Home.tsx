@@ -1,11 +1,11 @@
-import RecetteCard from "../RecetteCard";
 import RecettesList from "../RecettesArray";
+import RecetteCard from "../components/RecetteCard";
 import "../assets/style/RecetteCard.css";
 
 function Home() {
   return (
     <>
-      <section className="recetteListe">
+      <section className="recipe-list">
         {RecettesList.map((value) => (
           <RecetteCard key={value.recetteTitle} {...value} />
         ))}

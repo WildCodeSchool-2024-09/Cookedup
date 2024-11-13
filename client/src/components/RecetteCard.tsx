@@ -1,4 +1,4 @@
-import "./assets/style/RecetteCard.css";
+import "../assets/style/RecetteCard.css";
 
 interface RecetteCardId {
   imgSrc: string;
@@ -18,7 +18,7 @@ function RecetteCard({
 }: RecetteCardId) {
   return (
     <>
-      <section className="recipeCard">
+      <section className="recipe-card">
         <img
           src={imgSrc}
           alt={"Food representing the recipe"}
