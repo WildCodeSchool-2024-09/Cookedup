@@ -1,4 +1,4 @@
-const RecettesList = [
+const recipeList = [
   {
     imgSrc: "/src/assets/images/ramen.jpg",
     recetteTitle: "Ramen",
@@ -32,4 +32,4 @@ const RecettesList = [
   },
 ];
 
-export default RecettesList;
+export default recipeList;
