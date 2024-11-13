@@ -32,4 +32,27 @@ const recipeList = [
   },
 ];
 
+// interface RecetteCardId {
+//   imgSrc: string;
+//   recetteTitle: string;
+//   cardStars: string;
+//   cardHeart: string;
+//   cardCart: string;
+// }
+
+// const [isFavorite, setIsFavorite] = useState([]);
+// const toggleFavorite = (recipeList) => {
+//   if (isFavorite.includes(recipeList)) {
+//     setIsFavorite(isFavorite.filter(fav => fav !== recipeList));
+//   } else {setIsFavorite([...isFavorite, recipeList]);
+
+//   }
+// };
+
+/* <img src={cardStars} alt={"Recipe difficulty"} className="star-img" /> 
+<section className="card-button">
+<button type="button">{cardHeart}</button>
+<button type="button">{cardCart}</button>
+</section>  */
+
 export default recipeList;

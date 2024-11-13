@@ -1,42 +1,21 @@
 import "./assets/style/RecetteCard.css";
+import type { RecipeData } from "./types/Home";
 
-interface RecetteCardId {
-  imgSrc: string;
-  recetteTitle: string;
-  cardStars: string;
-  cardHeart: string;
-  cardCart: string;
-}
-
-function RecipeCard({
-  imgSrc,
-  recetteTitle,
-  cardStars,
-  cardHeart,
-  cardCart,
-}: RecetteCardId) {
-  // const [isFavorite, setIsFavorite] = useState([]);
-  // const toggleFavorite = (recipeList) => {
-  //   if (isFavorite.includes(recipeList)) {
-  //     setIsFavorite(isFavorite.filter(fav => fav !== recipeList));
-  //   } else {setIsFavorite([...isFavorite, recipeList]);
-
-  //   }
-  // };
-
+function RecipeCard({ title, image, cardCart }: RecipeData) {
   return (
     <>
       <section className="recipe-card">
         <img
-          src={imgSrc}
+          src={image}
           alt={"Food representing the recipe"}
           className="food-img"
         />
-        <h3>{recetteTitle}</h3>
-        <img src={cardStars} alt={"Recipe difficulty"} className="star-img" />
+        <h3>{title}</h3>
         <section className="card-button">
-          <button type="button">{cardHeart}</button>
-          <button type="button">{cardCart}</button>
+          {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
+          <button className="button">{cardCart}</button>
+          {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
+          <button className="button">{cardCart}</button>
         </section>
       </section>
     </>
