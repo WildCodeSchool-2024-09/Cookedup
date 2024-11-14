@@ -5,13 +5,13 @@ function Footer() {
     <footer>
       <div className="Footer-container">
         <ul className="Footer-box">
-          <li>
+          <li className="linkFooter">
             <Link to="/Copyright">Copyright</Link>
           </li>
-          <li>
+          <li className="linkFooter">
             <Link to="/mentions-legales">Mentions légales</Link>
           </li>
-          <li>
+          <li className="linkFooter">
             <Link to="/conditions-generales">Conditions générales</Link>
           </li>
         </ul>

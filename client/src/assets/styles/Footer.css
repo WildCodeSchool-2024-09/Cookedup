@@ -9,24 +9,15 @@
   background-color: rgba(219, 244, 224, 0.7);
   height: 15vh;
 }
-#Copyright {
+
+.linkFooter {
   margin-top: 5vh;
   font-size: medium;
   font-weight: bold;
   list-style: none;
+}
+.linkFooter a {
   text-decoration: none;
-}
-#conditions {
-  margin-top: 5vh;
-  font-size: medium;
-  font-weight: bold;
-  list-style: none;
-}
-#mentions {
-  margin-top: 5vh;
-  font-size: medium;
-  font-weight: bold;
-  list-style: none;
 }
 
 @media screen and (max-width: 720px) {
