@@ -3,8 +3,8 @@ import "../assets/styles/Footer.css";
 function Footer() {
   return (
     <footer>
-      <div>
-        <ul>
+      <div className="Footer-container">
+        <ul className="Footer-box">
           <li>
             <Link to="/Copyright">Copyright</Link>
           </li>

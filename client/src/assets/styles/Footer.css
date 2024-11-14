@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
 }
-ul {
+.Footer-box {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,7 +15,10 @@ li {
   font-weight: bold;
   list-style: none;
 }
-@media screen and (max-width: 720px){
+
+@media screen and (max-width: 720px) {
+  li {
     height: 15vh;
     margin-top: 5vh;
+  }
 }
