@@ -9,7 +9,20 @@
   background-color: rgba(219, 244, 224, 0.7);
   height: 15vh;
 }
-li {
+#Copyright {
+  margin-top: 5vh;
+  font-size: medium;
+  font-weight: bold;
+  list-style: none;
+  text-decoration: none;
+}
+#conditions {
+  margin-top: 5vh;
+  font-size: medium;
+  font-weight: bold;
+  list-style: none;
+}
+#mentions {
   margin-top: 5vh;
   font-size: medium;
   font-weight: bold;
