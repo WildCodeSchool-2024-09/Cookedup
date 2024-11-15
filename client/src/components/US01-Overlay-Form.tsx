@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "../assets/styles/US01-Overlay-Form.css";
+import burgerImage from "../assets/images/menu_burger_icon.webp";
 
 function FormWithButton() {
-  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(false); // Afficher ou non le formulaire
   const [recipeChoice, setRecipeChoice] = useState<string>("");
   const [dietaryFilters, setDietaryFilters] = useState<string[]>([]);
   const [includedIngredients, setIncludedIngredients] = useState<string[]>([]);
@@ -112,11 +113,11 @@ function FormWithButton() {
   return (
     <div>
       <button
-        className="openFilterButton"
+        className="open-filter-button"
         type="button"
         onClick={handleButtonClick}
       >
-        {isFormVisible ? "Fermer le formulaire" : "Ouvrir le formulaire"}
+        <img className="open-filter-img" src={burgerImage} alt="menu burger" />
       </button>
 
       {isFormVisible && (
@@ -129,19 +130,23 @@ function FormWithButton() {
             X
           </button>
 
-          <p>Envie d'une recette particulière ?</p>
+          <p className="text-style-center">
+            Envie d'une recette particulière ?
+          </p>
           <input
+            className="prettier-box-form"
             type="text"
             placeholder="Nom de la recette"
             value={recipeChoice}
             onChange={(e) => setRecipeChoice(e.target.value)}
           />
+          <p className="text-style">Filtres diététiques :</p>
 
-          <div>
-            <p>Filtres diététiques :</p>
+          <div className="diet-filter-container">
             {["Gluten Free", "Vegetarian", "Vegan"].map((filter) => (
-              <label key={filter}>
+              <label className="diet-filter" key={filter}>
                 <input
+                  className="checkbox-cursor"
                   type="checkbox"
                   value={filter}
                   checked={dietaryFilters.includes(filter)}
@@ -159,8 +164,9 @@ function FormWithButton() {
           </div>
 
           <div>
-            <p>Ajouter des ingrédients :</p>
+            <p className="text-style">Ajouter des ingrédients :</p>
             <input
+              className="prettier-box-form"
               type="text"
               placeholder="Ingrédient à inclure"
               value={valueInclude}
@@ -171,7 +177,7 @@ function FormWithButton() {
               <ul className="autocomplete-list">
                 {data
                   .filter((item) =>
-                    item.toLowerCase().includes(valueInclude.toLowerCase()),
+                    item.toLowerCase().startsWith(valueInclude.toLowerCase()),
                   )
                   .map((item, index) => (
                     <li
@@ -197,13 +203,16 @@ function FormWithButton() {
               </ul>
             )}
             {includedIngredients.length > 0 && (
-              <p>Ingrédients ajoutés : {includedIngredients.join(", ")}</p>
+              <p className="choice-list-selection">
+                Ingrédients ajoutés : {includedIngredients.join(", ")}
+              </p>
             )}
           </div>
 
           <div>
-            <p>Exclure des ingrédients :</p>
+            <p className="text-style">Exclure des ingrédients :</p>
             <input
+              className="prettier-box-form"
               type="text"
               placeholder="Ingrédient à exclure"
               value={valueExclude}
@@ -214,7 +223,7 @@ function FormWithButton() {
               <ul className="autocomplete-list">
                 {data
                   .filter((item) =>
-                    item.toLowerCase().includes(valueExclude.toLowerCase()),
+                    item.toLowerCase().startsWith(valueExclude.toLowerCase()),
                   )
                   .map((item, index) => (
                     <li
@@ -240,14 +249,19 @@ function FormWithButton() {
               </ul>
             )}
             {excludedIngredients.length > 0 && (
-              <p>Ingrédients exclus : {excludedIngredients.join(", ")}</p>
+              <p className="choice-list-selection">
+                Ingrédients exclus : {excludedIngredients.join(", ")}
+              </p>
             )}
           </div>
-
-          <button type="submit">Envoyer</button>
-          <button type="button" onClick={handleClear}>
-            Réinitialiser
-          </button>
+          <div className="bot-button-containner">
+            <button className="bot-button" type="submit">
+              Envoyer
+            </button>
+            <button className="bot-button" type="button" onClick={handleClear}>
+              Réinitialiser
+            </button>
+          </div>
         </form>
       )}
     </div>
