@@ -1,12 +1,23 @@
 body {
-  max-width: fit-content;
-  padding: 40px;
+  display: grid;
+}
+
+main {
+  display: grid;
+  background-color: rgba(244, 246, 248, 0.941);
+  grid-template-columns: 180px 1fr;
+  gap: 16px;
+}
+
+.my-aside {
+  grid-column: 1;
+  background-color: rgb(230, 237, 230);
 }
 
 .recipe-list {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
 
@@ -16,10 +27,10 @@ body {
   place-items: center;
   background-color: rgb(230, 237, 230);
   width: 160px;
-  height: auto;
   border-radius: 10px;
   font-size: 0.8rem;
   text-align: center;
+  box-shadow: 5px 5px 5px grey;
 }
 
 h3 {
@@ -33,12 +44,11 @@ img {
   border-top-right-radius: 10px;
 }
 
-.card-button {
-  display: flex;
-  gap: 60px;
+button {
+  margin: 16px;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (min-width: 270px) {
   .recipe-list {
     display: flex;
     flex-wrap: wrap;

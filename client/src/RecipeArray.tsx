@@ -41,10 +41,10 @@ const recipeList = [
 // }
 
 // const [isFavorite, setIsFavorite] = useState([]);
-// const toggleFavorite = (recipeList) => {
-//   if (isFavorite.includes(recipeList)) {
-//     setIsFavorite(isFavorite.filter(fav => fav !== recipeList));
-//   } else {setIsFavorite([...isFavorite, recipeList]);
+// const toggleFavorite = (RecipeData) => {
+//   if (isFavorite.includes(RecipeData)) {
+//     setIsFavorite(isFavorite.filter(fav => fav !== RecipeData));
+//   } else {setIsFavorite([...isFavorite, RecipeData]);
 
 //   }
 // };
