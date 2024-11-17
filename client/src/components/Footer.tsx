@@ -3,15 +3,15 @@ import "../assets/styles/Footer.css";
 function Footer() {
   return (
     <footer>
-      <div className="Footer-container">
-        <ul className="Footer-box">
-          <li className="linkFooter">
+      <div className="footer-container">
+        <ul className="footer-box">
+          <li className="link-footer">
             <Link to="/Copyright">Copyright</Link>
           </li>
-          <li className="linkFooter">
+          <li className="link-footer">
             <Link to="/mentions-legales">Mentions légales</Link>
           </li>
-          <li className="linkFooter">
+          <li className="link-footer">
             <Link to="/conditions-generales">Conditions générales</Link>
           </li>
         </ul>
