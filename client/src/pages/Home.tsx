@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Aside from "../components/Aside";
 import RecipeCard from "../components/RecipeCard";
 import type { RecipeData } from "../types/Home";
-import "../assets/style/RecetteCard.css";
+import "../assets/style/HomePage.css";
 
 function Home() {
   const [data, setData] = useState<[] | RecipeData[]>([]);
