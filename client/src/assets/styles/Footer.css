@@ -1,0 +1,24 @@
+.footer-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(219, 244, 224, 0.7);
+  height: 15vh;
+}
+
+.link-footer {
+  margin-top: 5vh;
+  font-size: medium;
+  font-weight: bold;
+  list-style: none;
+}
+.link-footer a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 720px) {
+  li {
+    height: 15vh;
+    margin-top: 5vh;
+  }
+}
