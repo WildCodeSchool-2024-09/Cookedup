@@ -1,0 +1,110 @@
+.box-container {
+  background-color: #a5e6b2;
+  filter: drop-shadow(-2mm -2mm 3mm #657267);
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 30vw;
+  margin-left: 35%;
+  margin-top: 4%;
+  border-radius: 8%;
+}
+.open-filter-img {
+  width: 2vw;
+  height: auto;
+}
+.open-filter-button {
+  position: absolute;
+  right: 1%;
+  top: 3%;
+  border-radius: 8px;
+  background-color: #dbf4e0;
+  border-color: #4bbd33;
+  cursor: pointer;
+  position: fixed;
+}
+
+.close-button {
+  width: 2vw;
+  height: 5vh;
+
+  background-color: transparent;
+  margin-left: 27vw;
+  margin-top: 1.4vh;
+  border-radius: 40%;
+  border-color: #029999;
+  cursor: pointer;
+}
+
+.text-style {
+  margin: 1rem 0rem 1rem 2rem;
+}
+
+.text-style-center {
+  text-align: center;
+}
+
+.choice-list-selection {
+  margin: 1rem 0 1.5rem 1rem;
+}
+.diet-filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 5px;
+  margin: 0.7rem 0rem 1rem -1.4rem;
+}
+
+.diet-filter {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+.checkbox-cursor {
+  cursor: pointer;
+}
+.prettier-box-form {
+  border-radius: 8px;
+  width: 28vw;
+  height: 8vh;
+  margin: 0.4rem 0rem 0.3rem 0.8rem;
+}
+
+.selected {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+.autocomplete-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.autocomplete-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.active {
+  background-color: #f0f0f0;
+}
+.bot-button-containner {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.bot-button {
+  width: auto;
+  margin: 1.2rem 0 1rem 0;
+  cursor: pointer;
+  border-radius: 8px;
+  filter: drop-shadow(0mm 0mm 1.5mm #657267);
+}
