@@ -5,18 +5,15 @@ import type { RecipeData } from "../types/Home";
 
 function Home() {
   const [recipes, setRecipes] = useState<null | RecipeData[]>(null);
-
-  const apiKey = "07d18ab9d2a9441d9e3148c6ff03a098";
+  const MyApiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
     fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=6`,
+      `https://api.spoonacular.com/recipes/random?apiKey=${MyApiKey}&number=6`,
     )
       .then((response) => response.json())
       .then((data) => {
         setRecipes(data.recipes);
-        // biome-ignore lint/suspicious/noConsoleLog: <explanation>
-        console.log(data.recipes);
       });
   }, []);
 

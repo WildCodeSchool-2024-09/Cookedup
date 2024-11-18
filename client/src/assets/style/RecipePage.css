@@ -1,0 +1,96 @@
+.main-recipe {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aside-recipe {
+  width: 50vw;
+}
+
+.aside-recipe img {
+  position: fixed;
+  width: 50vw;
+  height: 100vh;
+  object-fit: cover;
+  border-radius: 0 100px 0 0;
+}
+
+.detail-recipe {
+  /* position: absolute; */
+  /* padding: 2em ; */
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-recipe {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2em;
+  height: 50vh;
+}
+
+.return-arrow {
+  font-size: 2em;
+  color: #ffcc00;
+  margin: 0.2em;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.header-recipe h1 {
+  text-align: center;
+  font-size: 1.5em;
+  /* width: 50%; */
+}
+
+.add-list-button {
+  width: 10em;
+  height: 2.5em;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffcc00;
+  color: white;
+  cursor: pointer;
+}
+
+.ingredients {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredients article {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.ingredients figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8px;
+}
+
+.ingredients article img {
+  /* width: 100px; */
+  height: 4em;
+}
+
+.preparation {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.preparation ul {
+  list-style: none;
+  padding: 0;
+}
