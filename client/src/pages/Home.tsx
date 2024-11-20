@@ -1,8 +1,6 @@
 import RecipeCard from "../components/RecipeCard";
 import "../assets/style/RecetteCard.css";
 import { useEffect, useState } from "react";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import type { RecipeData } from "../types/Home";
 import "../assets/styles/Footer.css";
 import "../assets/styles/Header.css";
@@ -23,7 +21,6 @@ function Home() {
 
   return (
     <>
-      <Header />
       <main>
         <section className="recipe-list">
           {recipes?.map((element) => (
@@ -36,7 +33,6 @@ function Home() {
           ))}
         </section>
       </main>
-      <Footer />
     </>
   );
 }
