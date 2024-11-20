@@ -1,4 +1,4 @@
-function Shopping_list() {
+function ShoppingList() {
   return (
     /* You can delete the h1 tag if you want, it's just for testing route*/
     <>
@@ -7,4 +7,4 @@ function Shopping_list() {
   );
 }
 
-export default Shopping_list;
+export default ShoppingList;
