@@ -1,6 +1,7 @@
 import RecipeCard from "../components/RecipeCard";
-import "../assets/style/RecetteCard.css";
+import "../style/HomePage.css";
 import { useEffect, useState } from "react";
+import Aside from "../components/Aside";
 import type { RecipeData } from "../types/Home";
 
 function Home() {
@@ -9,7 +10,7 @@ function Home() {
 
   useEffect(() => {
     fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=${MyApiKey}&number=6`,
+      `https://api.spoonacular.com/recipes/random?apiKey=${MyApiKey}&number=10`,
     )
       .then((response) => response.json())
       .then((data) => {
@@ -19,7 +20,8 @@ function Home() {
 
   return (
     <>
-      <main>
+      <main className="main-home">
+        <Aside imgSrc="public/images/CookedUpLogo.webp" />
         <section className="recipe-list">
           {recipes?.map((element) => (
             <RecipeCard

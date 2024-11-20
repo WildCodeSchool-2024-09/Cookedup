@@ -1,0 +1,37 @@
+.main-home {
+  display: grid;
+  background-color: rgba(244, 246, 248, 0.941);
+  grid-template-columns: 200px auto auto;
+  gap: 50px;
+}
+
+.main-aside {
+  display: none;
+  background-color: rgb(230, 237, 230);
+  width: 230px;
+}
+
+.cookedup-logo {
+  height: 140px;
+  width: 190px;
+  padding-left: 20%;
+}
+
+.aside-nav {
+  padding: 12px;
+}
+
+@media (min-width: 360px) {
+  .main-aside {
+    display: block; /* Le header réapparaît */
+    grid-area: header; /* Assure que le header occupe la zone définie dans Grid */
+  }
+
+  .main-home {
+    display: grid;
+    grid-template-areas:
+      "header main"
+      "header footer";
+    grid-template-columns: 200px 1fr; /* Ajuste la largeur du header sur desktop */
+  }
+}
