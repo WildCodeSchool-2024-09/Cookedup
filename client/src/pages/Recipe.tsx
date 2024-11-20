@@ -23,7 +23,7 @@ function Recipe() {
 
   return (
     <>
-      <body className="main-recipe">
+      <section className="main-recipe">
         <aside className="aside-recipe">
           <img
             src={recipeDetails?.image}
@@ -74,7 +74,7 @@ function Recipe() {
             })}
           </section>
         </section>
-      </body>
+      </section>
     </>
   );
 }
