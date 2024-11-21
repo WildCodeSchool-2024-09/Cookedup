@@ -1,18 +1,22 @@
 export interface RecipeData {
   id: number;
-  title?: string;
-  image?: string;
-  readyInMinutes?: number;
-  summary?: string;
-  extendedIngredients?: [
+  title: string;
+  image: string;
+}
+
+export interface RecipeDetails extends RecipeData {
+  readyInMinutes: number;
+  summary: string;
+  extendedIngredients: [
     {
+      amount: number;
       id: number;
       original: string;
       name: string;
       image: string;
     },
   ];
-  analyzedInstructions?: [
+  analyzedInstructions: [
     {
       steps: [
         {

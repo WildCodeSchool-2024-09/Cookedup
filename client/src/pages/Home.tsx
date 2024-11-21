@@ -3,6 +3,8 @@ import "../style/HomePage.css";
 import { useEffect, useState } from "react";
 import Aside from "../components/Aside";
 import type { RecipeData } from "../types/Home";
+import "../assets/styles/Footer.css";
+import "../assets/styles/Header.css";
 
 function Home() {
   const [recipes, setRecipes] = useState<null | RecipeData[]>(null);

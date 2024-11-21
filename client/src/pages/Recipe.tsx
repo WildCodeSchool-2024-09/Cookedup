@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import type { RecipeData } from "../types/Home";
+import type { RecipeDetails } from "../types/Home";
 import "../assets/style/RecipePage.css";
 
 function Recipe() {
-  const [recipeDetails, setRecipeDetails] = useState<null | RecipeData>();
+  const [recipeDetails, setRecipeDetails] = useState<null | RecipeDetails>();
   const { id } = useParams();
   const MyApiKey = import.meta.env.VITE_API_KEY;
 
@@ -18,12 +18,13 @@ function Recipe() {
       });
   }, [id]);
 
-  // biome-ignore lint/suspicious/noConsoleLog: <explanation>
-  console.log(recipeDetails);
-
   return (
     <>
-      <body className="main-recipe">
+      <section className="main-recipe">
+        <Link to={"/"} className="return-arrow">
+          {" "}
+          ↩
+        </Link>
         <aside className="aside-recipe">
           <img
             src={recipeDetails?.image}
@@ -31,17 +32,17 @@ function Recipe() {
           />
         </aside>
         <section className="detail-recipe">
-          <Link to={"/"} className="return-arrow">
-            {" "}
-            ↩
-          </Link>
           <header className="header-recipe">
             <h1>{`${recipeDetails?.title}`}</h1>
-            <p>{`Temps de préparation : ${recipeDetails?.readyInMinutes}mn`}</p>
-            <p>Difficulté:</p>
-            <button type="button" className="add-list-button">
-              Add to list
-            </button>
+            <section className="header-recipe-info">
+              <p>{`Temps de préparation : ${recipeDetails?.readyInMinutes}mn`}</p>
+              <p>Difficulté:</p>
+            </section>
+            <section className="header-recipe-buttons">
+              <button type="button" className="add-list-button">
+                Add to list
+              </button>
+            </section>
           </header>
 
           <section className="ingredients">
@@ -55,6 +56,7 @@ function Recipe() {
                       alt={ingredient.name}
                     />
                     <figcaption>{ingredient.name} </figcaption>
+                    <p>Count :{ingredient.amount}</p>
                   </figure>
                 );
               })}
@@ -74,7 +76,7 @@ function Recipe() {
             })}
           </section>
         </section>
-      </body>
+      </section>
     </>
   );
 }
