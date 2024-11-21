@@ -1,4 +1,4 @@
-.header-container {
+.visible {
   display: none;
 }
 
@@ -106,11 +106,12 @@
   font-weight: bold;
 }
 
-.footer-container {
-  display: none;
-}
-
 @media screen and (max-width: 720px) {
+  .header-container,
+  .footer-container {
+    display: block;
+  }
+
   .main-recipe {
     flex-direction: column;
     padding: 0;

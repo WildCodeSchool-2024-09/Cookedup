@@ -18,9 +18,6 @@ function Recipe() {
       });
   }, [id]);
 
-  // biome-ignore lint/suspicious/noConsoleLog: <explanation>
-  console.log(recipeDetails);
-
   return (
     <>
       <section className="main-recipe">

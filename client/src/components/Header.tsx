@@ -1,7 +1,14 @@
+import { useLocation } from "react-router-dom";
 import "../assets/styles/header.css";
 function Header() {
+  const location = useLocation();
+  const urlLocation = location.pathname;
+  const splitLocation = urlLocation.split("/");
+
   return (
-    <header className="header-container">
+    <header
+      className={`header-container ${splitLocation[1] === "recipe" ? "visible" : ""}`}
+    >
       <figure id="home-container">
         <img id="home" src="/src/assets/image/image-temp.webp" alt="cuisine" />
         <img
