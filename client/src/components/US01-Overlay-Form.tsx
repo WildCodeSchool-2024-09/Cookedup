@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "../assets/styles/US01-Overlay-Form.css";
-import burgerImage from "../assets/images/menu_burger_icon.webp";
 
 function FormWithButton() {
   const [isFormVisible, setIsFormVisible] = useState(false); // Afficher ou non le formulaire
@@ -117,7 +116,11 @@ function FormWithButton() {
         type="button"
         onClick={handleButtonClick}
       >
-        <img className="open-filter-img" src={burgerImage} alt="menu burger" />
+        <img
+          className="open-filter-img"
+          src="menu_burger_icon.webp"
+          alt="menu burger"
+        />
       </button>
 
       {isFormVisible && (

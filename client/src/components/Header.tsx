@@ -4,19 +4,15 @@ function Header() {
     <header>
       <div className="header-container">
         <figure id="home-container">
-          <img
-            id="home"
-            src="/src/assets/image/image-temp.webp"
-            alt="cuisine"
-          />
+          <img id="home" src="image-temp.webp" alt="cuisine" />
           <img
             id="left-flower"
-            src="/src/assets/image/Pngtreeivy_vines_926036.webp"
+            src="Pngtreeivy_vines_926036.webp"
             alt="Fleur située à gauche"
           />
           <img
             id="right-flower"
-            src="/src/assets/image/vine-computer-icons-clip-art-ivy-53f2b07d5459bc3cc8cd0ee5dda0630a.webp"
+            src="vine-computer-icons-clip-art-ivy-53f2b07d5459bc3cc8cd0ee5dda0630a.webp"
             alt="Fleur située à droite"
           />
         </figure>
@@ -30,7 +26,7 @@ function Header() {
           <figure>
             <img
               id="logo"
-              src="/src/assets/image/CookedUpLogo_2.webp"
+              src="CookedUpLogo_2.webp"
               alt="Logo de l'application"
             />
           </figure>

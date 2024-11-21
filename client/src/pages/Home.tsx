@@ -1,8 +1,12 @@
 import RecipeCard from "../components/RecipeCard";
-import "../style/HomePage.css";
+import "../assets/styles/HomePage.css";
 import { useEffect, useState } from "react";
 import Aside from "../components/Aside";
+import FormWithButton from "../components/US01-Overlay-Form";
+import Header from "../components/Header";
 import type { RecipeData } from "../types/Home";
+import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 function Home() {
   const [recipes, setRecipes] = useState<null | RecipeData[]>(null);
@@ -21,6 +25,9 @@ function Home() {
   return (
     <>
       <main className="main-home">
+        <Header />
+        <ScrollToTop />
+        <FormWithButton />
         <Aside imgSrc="public/images/CookedUpLogo.webp" />
         <section className="recipe-list">
           {recipes?.map((element) => (
@@ -32,6 +39,7 @@ function Home() {
             />
           ))}
         </section>
+        <Footer />
       </main>
     </>
   );
