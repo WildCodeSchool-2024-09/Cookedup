@@ -1,37 +1,32 @@
 import "../assets/styles/header.css";
+
 function Header() {
   return (
     <header>
-      <div className="header-container">
-        <figure id="home-container">
-          <img id="home" src="image-temp.webp" alt="cuisine" />
+      <section className="header-container">
+        <section className="kitchen-photo">
           <img
-            id="left-flower"
-            src="Pngtreeivy_vines_926036.webp"
-            alt="Fleur située à gauche"
+            className="kitchen"
+            src="/public/images/kitchen-header.jpg"
+            alt="Logo de l'application"
           />
-          <img
-            id="right-flower"
-            src="vine-computer-icons-clip-art-ivy-53f2b07d5459bc3cc8cd0ee5dda0630a.webp"
-            alt="Fleur située à droite"
-          />
-        </figure>
-        <div className="header-end">
+        </section>
+        <section className="header-end">
           <p className="presentation">
             Bienvenue chez Cooked-Up ! Ici, cuisiner devient facile et amusant.
             Si une recette te plaît, clique sur le cœur pour l’ajouter à tes
             favoris. Prêt(e) à cuisiner ? Ajoute ta recette à ta liste de
             courses !
           </p>
-          <figure>
-            <img
-              id="logo"
-              src="CookedUpLogo_2.webp"
-              alt="Logo de l'application"
-            />
-          </figure>
-        </div>
-      </div>
+        </section>
+        <section className="logo-section">
+          <img
+            className="logo"
+            src="/public/images/CookedUpLogo.webp"
+            alt="Logo de l'application"
+          />
+        </section>
+      </section>
     </header>
   );
 }

@@ -1,19 +1,23 @@
 .footer-box {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: rgba(219, 244, 224, 0.7);
-  height: 15vh;
+  background-color: rgb(230, 237, 230);
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+  margin: 40px 0px 0px 0px;
 }
 
 .link-footer {
-  margin-top: 5vh;
-  font-size: medium;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
   list-style: none;
 }
+
 .link-footer a {
   text-decoration: none;
+  color: black;
 }
 
 @media screen and (max-width: 720px) {
