@@ -1,80 +1,37 @@
 .header-container {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(237, 237, 237, 1);
-}
-#home-container {
-  position: relative; /* Définit le conteneur comme référence */
-  width: 100%;
-}
-#home {
-  width: 100%;
-  height: auto;
-}
-#left-flower {
-  width: 35vw;
-  height: auto;
-  position: absolute;
-  top: 88%;
-  left: -4%;
-  visibility: hidden;
+  display: grid;
+  background-color: rgb(230, 237, 230);
 }
 
-#right-flower {
-  width: 20vw;
-  height: auto;
-  position: absolute;
-  top: 100%;
-  right: -2%;
-  rotate: 151.48deg;
-  visibility: hidden;
+.kitchen-section {
+  align-items: center;
+  justify-items: center;
 }
+
+.kitchen {
+  width: 100%;
+  height: auto;
+}
+
 .presentation {
-  margin-top: 10vh;
-  margin-bottom: 20vh;
-  padding-left: 20vw;
-  padding-right: 20vw;
+  margin: 30px 140px 30px 140px;
   text-align: center;
-  font-size: 1.5em;
-  font-weight: bold;
-  position: relative;
 }
 
-#logo {
-  height: auto;
-  width: auto;
-  position: absolute;
-  top: 146%;
-  left: 35%;
-  visibility: hidden;
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(244, 246, 248, 0.941);
 }
 
-@media screen and (max-width: 720px) {
-  #logo {
-    height: auto;
-    width: auto;
-    position: absolute;
-    top: 114%;
-    left: 25%;
-    visibility: visible;
-  }
-  .presentation {
-    margin-top: 25vh;
-    margin-bottom: 20vh;
-    padding-left: 20vw;
-    padding-right: 20vw;
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: bold;
-    position: relative;
-  }
-  #left-flower {
-    visibility: visible;
-  }
-  #right-flower {
-    visibility: visible;
-  }
+.logo {
+  height: 200px;
+  width: 200px;
+}
+
+@media (max-width: 721px) {
   .header-container {
-    background-color: rgba(209, 240, 225, 0.7);
+    display: none;
   }
 }
