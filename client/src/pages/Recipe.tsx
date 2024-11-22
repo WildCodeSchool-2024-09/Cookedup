@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import type { RecipeDetails } from "../types/Home";
-import "../assets/style/RecipePage.css";
+import "../assets/styles/RecipePage.css";
 
 function Recipe() {
   const [recipeDetails, setRecipeDetails] = useState<null | RecipeDetails>();

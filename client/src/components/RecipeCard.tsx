@@ -1,4 +1,4 @@
-import "../style/RecipeCard.css";
+import "../assets/styles/RecipeCard.css";
 import { NavLink } from "react-router-dom";
 import type { RecipeData } from "../types/Home";
 
