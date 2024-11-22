@@ -48,7 +48,7 @@ function Recipe() {
           <section className="ingredients">
             <h2>Ingrédients:</h2>
             <article>
-              {recipeDetails?.extendedIngredients?.map((ingredient) => {
+              {recipeDetails?.extendedIngredients.map((ingredient) => {
                 return (
                   <figure key={ingredient.id}>
                     <img

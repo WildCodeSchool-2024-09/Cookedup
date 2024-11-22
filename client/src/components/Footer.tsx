@@ -7,7 +7,7 @@ function Footer() {
 
   return (
     <footer
-      className={`footer-container ${splitLocation[1] === "recipe" ? "visible" : ""}`}
+      className={`footer-container ${splitLocation[1] === "Recipe" ? "visible" : ""}`}
     >
       <ul className="footer-box">
         <li className="link-footer">
