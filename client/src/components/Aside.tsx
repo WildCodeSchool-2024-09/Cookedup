@@ -1,4 +1,4 @@
-import "../style/HomePage.css";
+import "../assets/styles/HomePage.css";
 
 interface AsideProps {
   imgSrc: string;
@@ -10,9 +10,11 @@ function Aside({ imgSrc }: AsideProps) {
       <header className="main-aside">
         <img className="cookedup-logo" src={imgSrc} alt="Cooked Up logo" />
         <nav className="aside-nav">
-          {/* <NavLink to ="" >Connection / Inscription </NavLink>
-          <NavLink to="">Mes recettes favorites</NavLink>
-          <NavLink to="">Ma shopping liste</NavLink> */}
+          <ul>
+            <li>Connection / Inscription</li>
+            <li>Mes recettes favorites</li>
+            <li>Ma shopping liste</li>
+          </ul>
         </nav>
       </header>
     </>
