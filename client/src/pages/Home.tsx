@@ -24,9 +24,9 @@ function Home() {
 
   return (
     <>
+      <FormWithButton />
       <main className="main-home">
         <ScrollToTop />
-        <FormWithButton />
         <Aside imgSrc="public/images/CookedUpLogo.webp" />
         <section className="recipe-list">
           {recipes?.map((element) => (

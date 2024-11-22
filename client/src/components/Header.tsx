@@ -7,8 +7,8 @@ function Header() {
         <section className="kitchen-photo">
           <img
             className="kitchen"
-            src="/public/images/kitchen-header.jpg"
-            alt="Logo de l'application"
+            src="/image-temp.jpg"
+            alt="Home page kitchen header"
           />
         </section>
         <section className="header-end">
