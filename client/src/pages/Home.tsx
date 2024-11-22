@@ -2,11 +2,9 @@ import RecipeCard from "../components/RecipeCard";
 import "../assets/styles/HomePage.css";
 import { useEffect, useState } from "react";
 import Aside from "../components/Aside";
-import FormWithButton from "../components/US01-Overlay-Form";
-import Header from "../components/Header";
-import type { RecipeData } from "../types/Home";
-import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
+import FormWithButton from "../components/US01-Overlay-Form";
+import type { RecipeData } from "../types/Home";
 
 function Home() {
   const [recipes, setRecipes] = useState<null | RecipeData[]>(null);
@@ -25,7 +23,6 @@ function Home() {
   return (
     <>
       <main className="main-home">
-        <Header />
         <ScrollToTop />
         <FormWithButton />
         <Aside imgSrc="public/images/CookedUpLogo.webp" />
@@ -39,7 +36,6 @@ function Home() {
             />
           ))}
         </section>
-        <Footer />
       </main>
     </>
   );
