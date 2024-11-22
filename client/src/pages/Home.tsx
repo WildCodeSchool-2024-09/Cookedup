@@ -5,6 +5,8 @@ import Aside from "../components/Aside";
 import ScrollToTop from "../components/ScrollToTop";
 import FormWithButton from "../components/US01-Overlay-Form";
 import type { RecipeData } from "../types/Home";
+import "../assets/styles/Footer.css";
+import "../assets/styles/Header.css";
 
 function Home() {
   const [recipes, setRecipes] = useState<null | RecipeData[]>(null);
