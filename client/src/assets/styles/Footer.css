@@ -1,21 +1,15 @@
-.footer-box {
+.footer-container {
   display: flex;
   background-color: rgb(230, 237, 230);
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
-  padding: 20px;
+  padding: 40px;
   margin: 40px 0px 0px 0px;
 }
 
-.link-footer {
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-
-.link-footer a {
+.footer-container > a {
   text-decoration: none;
   color: black;
 }

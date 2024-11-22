@@ -4,19 +4,13 @@ import "../assets/styles/Footer.css";
 function Footer() {
   return (
     <footer>
-      <div className="footer-container">
-        <ul className="footer-box">
-          <li className="link-footer">
-            <Link to="/Copyright">Copyright</Link>
-          </li>
-          <li className="link-footer">
-            <Link to="/mentions-legales">Mentions légales</Link>
-          </li>
-          <li className="link-footer">
-            <Link to="/conditions-generales">Conditions générales</Link>
-          </li>
-        </ul>
-      </div>
+      <section className="footer-container">
+        <Link to="/Copyright">Copyright</Link>
+
+        <Link to="/mentions-legales">Mentions légales</Link>
+
+        <Link to="/conditions-generales">Conditions générales</Link>
+      </section>
     </footer>
   );
 }
