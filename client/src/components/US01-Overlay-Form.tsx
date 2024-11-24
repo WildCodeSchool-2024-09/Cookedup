@@ -1,9 +1,14 @@
 import { useState } from "react";
 import "../assets/styles/US01-Overlay-Form.css";
 
-function FormWithButton() {
+interface FormWithButtonProps {
+  setFetchLink: React.Dispatch<React.SetStateAction<string>>;
+  fetchLink: string;
+}
+
+function FormWithButton({ setFetchLink }: FormWithButtonProps) {
   const [isFormVisible, setIsFormVisible] = useState(false); // Afficher ou non le formulaire
-  const [recipeChoice, setRecipeChoice] = useState<string>("");
+  const [recipeChoice, setRecipeChoice] = useState<string>(""); // Afficher le nom recette
   const [dietaryFilters, setDietaryFilters] = useState<string[]>([]);
   const [includedIngredients, setIncludedIngredients] = useState<string[]>([]);
   const [excludedIngredients, setExcludedIngredients] = useState<string[]>([]);
@@ -11,18 +16,20 @@ function FormWithButton() {
   const [valueExclude, setValueExclude] = useState("");
   const [activeIndexInclude, setActiveIndexInclude] = useState(-1);
   const [activeIndexExclude, setActiveIndexExclude] = useState(-1);
+  const MyApiKey = import.meta.env.VITE_API_KEY;
 
   // Données fictives à remplacer par un fetch d'ingrédients via l'API Spoonacular
   const data = [
-    "chocolat",
-    "vanille",
-    "fraise",
+    "apple",
+    "floor",
+    "orange",
+    "beef",
+    "egg",
     "café",
-    "banane",
-    "pomme",
-    "citron",
+    "peanut",
+    "pesto",
+    "watermelon",
   ];
-
   // Afficher/masquer le formulaire
   const handleButtonClick = () => setIsFormVisible(!isFormVisible);
 
@@ -88,17 +95,23 @@ function FormWithButton() {
   // Gérer la soumission du formulaire
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    const validExcludedIngredients = excludedIngredients.filter(
+      (ingredient) => ingredient.trim() !== "",
+    );
+    const newFetch = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${MyApiKey}&query=${recipeChoice}&diet=${dietaryFilters.join(",")}&includeIngredients=${includedIngredients.join(",")}&excludeIngredients=${validExcludedIngredients.join(",")}&number=30`;
+
+    setFetchLink(newFetch);
+
     alert(
-      `Recette choisie : ${recipeChoice}\nFiltres diététiques : ${dietaryFilters.join(
-        ", ",
-      )}\nIngrédients inclus : ${includedIngredients.join(
-        ", ",
-      )}\nIngrédients exclus : ${excludedIngredients.join(", ")}`,
+      ` lien API : ${newFetch}\n Recette choisie : ${recipeChoice}\nFiltres diététiques : ${dietaryFilters.join(", ")}\nIngrédients inclus : ${includedIngredients.join(", ")}\nIngrédients exclus : ${excludedIngredients.join(", ")}`,
     );
   };
 
   // Réinitialiser le formulaire
   const handleClear = () => {
+    setFetchLink(
+      `https://api.spoonacular.com/recipes/random?apiKey=${MyApiKey}&number=10`,
+    );
     setRecipeChoice("");
     setDietaryFilters([]);
     setIncludedIngredients([]);
@@ -188,9 +201,8 @@ function FormWithButton() {
                       onClick={() => handleSelectInclude(item)}
                       onMouseEnter={() => setActiveIndexInclude(index)}
                       onKeyDown={(event) => {
-                        // Si la touche pressionnée est "Enter" ou "Space" (barre d'espace), on sélectionne l'élément
                         if (event.key === "Enter" || event.key === " ") {
-                          event.preventDefault(); // Empêche le comportement par défaut (par exemple, pour éviter le "scroll" avec la barre d'espace)
+                          event.preventDefault();
                           handleSelectInclude(item);
                         }
                       }}
@@ -234,9 +246,8 @@ function FormWithButton() {
                       onClick={() => handleSelectExclude(item)}
                       onMouseEnter={() => setActiveIndexExclude(index)}
                       onKeyDown={(event) => {
-                        // Si la touche pressionnée est "Enter" ou "Space" (barre d'espace), on sélectionne l'élément
                         if (event.key === "Enter" || event.key === " ") {
-                          event.preventDefault(); // Empêche le comportement par défaut (par exemple, pour éviter le "scroll" avec la barre d'espace)
+                          event.preventDefault();
                           handleSelectExclude(item);
                         }
                       }}
