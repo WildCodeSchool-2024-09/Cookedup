@@ -8,7 +8,7 @@ function Header() {
   return (
     <header>
       <section
-        className={`header-container ${splitLocation[1] === "recipe" ? "visible" : ""}`}
+        className={`header-container ${splitLocation[1] === "Recipe" ? "visible" : ""}`}
       >
         <section className="kitchen-photo">
           <img

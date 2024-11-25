@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer>
       <section
-        className={`footer-container ${splitLocation[1] === "recipe" ? "visible" : ""}`}
+        className={`footer-container ${splitLocation[1] === "Recipe" ? "visible" : ""}`}
       >
         <Link to="/Copyright">Copyright</Link>
 

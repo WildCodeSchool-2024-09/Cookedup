@@ -22,7 +22,6 @@ function Recipe() {
     <>
       <section className="main-recipe">
         <Link to={"/"} className="return-arrow">
-          {" "}
           ↩
         </Link>
         <aside className="aside-recipe">
@@ -36,7 +35,11 @@ function Recipe() {
             <h1>{`${recipeDetails?.title}`}</h1>
             <section className="header-recipe-info">
               <p>{`Temps de préparation : ${recipeDetails?.readyInMinutes}mn`}</p>
-              <p>Difficulté:</p>
+              <p>
+                {recipeDetails?.diets.map((diet) => {
+                  return <span key={diet}>#{diet} </span>;
+                })}{" "}
+              </p>
             </section>
             <section className="header-recipe-buttons">
               <button type="button" className="add-list-button">
@@ -55,8 +58,9 @@ function Recipe() {
                       src={`https://img.spoonacular.com/ingredients_100x100/${ingredient.image}`}
                       alt={ingredient.name}
                     />
-                    <figcaption>{ingredient.name} </figcaption>
-                    <p>Count :{ingredient.amount}</p>
+                    <figcaption>
+                      {`${ingredient.amount} ${ingredient.unit} ${ingredient.name}`}
+                    </figcaption>
                   </figure>
                 );
               })}

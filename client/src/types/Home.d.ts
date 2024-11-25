@@ -7,6 +7,7 @@ export interface RecipeData {
 export interface RecipeDetails extends RecipeData {
   readyInMinutes: number;
   summary: string;
+  diets: [string];
   extendedIngredients: [
     {
       amount: number;
@@ -14,6 +15,7 @@ export interface RecipeDetails extends RecipeData {
       original: string;
       name: string;
       image: string;
+      unit: string;
     },
   ];
   analyzedInstructions: [
