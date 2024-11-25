@@ -1,14 +1,10 @@
+import type { FormWithButtonProps } from "../types/Home";
 import { useState } from "react";
 import "../assets/styles/US01-Overlay-Form.css";
-
-interface FormWithButtonProps {
-  setFetchLink: React.Dispatch<React.SetStateAction<string>>;
-  fetchLink: string;
-}
-
+import ingredient from "./IngredientArray";
 function FormWithButton({ setFetchLink }: FormWithButtonProps) {
-  const [isFormVisible, setIsFormVisible] = useState(false); // Afficher ou non le formulaire
-  const [recipeChoice, setRecipeChoice] = useState<string>(""); // Afficher le nom recette
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [recipeChoice, setRecipeChoice] = useState<string>("");
   const [dietaryFilters, setDietaryFilters] = useState<string[]>([]);
   const [includedIngredients, setIncludedIngredients] = useState<string[]>([]);
   const [excludedIngredients, setExcludedIngredients] = useState<string[]>([]);
@@ -18,18 +14,6 @@ function FormWithButton({ setFetchLink }: FormWithButtonProps) {
   const [activeIndexExclude, setActiveIndexExclude] = useState(-1);
   const MyApiKey = import.meta.env.VITE_API_KEY;
 
-  // Données fictives à remplacer par un fetch d'ingrédients via l'API Spoonacular
-  const data = [
-    "apple",
-    "floor",
-    "orange",
-    "beef",
-    "egg",
-    "café",
-    "peanut",
-    "pesto",
-    "watermelon",
-  ];
   // Afficher/masquer le formulaire
   const handleButtonClick = () => setIsFormVisible(!isFormVisible);
 
@@ -60,7 +44,7 @@ function FormWithButton({ setFetchLink }: FormWithButtonProps) {
     const handleSelect =
       type === "include" ? handleSelectInclude : handleSelectExclude;
 
-    const filteredSuggestions = data.filter((item) =>
+    const filteredSuggestions = ingredient.filter((item) =>
       item.toLowerCase().includes(value.toLowerCase()),
     );
 
@@ -98,13 +82,8 @@ function FormWithButton({ setFetchLink }: FormWithButtonProps) {
     const validExcludedIngredients = excludedIngredients.filter(
       (ingredient) => ingredient.trim() !== "",
     );
-    const newFetch = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${MyApiKey}&query=${recipeChoice}&diet=${dietaryFilters.join(",")}&includeIngredients=${includedIngredients.join(",")}&excludeIngredients=${validExcludedIngredients.join(",")}&number=30`;
-
+    const newFetch = `https://api.spoonacular.com/recipes/complexSearch?query=${encodeURIComponent(recipeChoice)}&apiKey=${MyApiKey}&diet=${encodeURIComponent(dietaryFilters.join(", "))}&includeIngredients=${encodeURIComponent(includedIngredients.join(", "))}&excludeIngredients=${encodeURIComponent(validExcludedIngredients.join(", "))}&number=30`;
     setFetchLink(newFetch);
-
-    alert(
-      ` lien API : ${newFetch}\n Recette choisie : ${recipeChoice}\nFiltres diététiques : ${dietaryFilters.join(", ")}\nIngrédients inclus : ${includedIngredients.join(", ")}\nIngrédients exclus : ${excludedIngredients.join(", ")}`,
-    );
   };
 
   // Réinitialiser le formulaire
@@ -123,7 +102,7 @@ function FormWithButton({ setFetchLink }: FormWithButtonProps) {
   };
 
   return (
-    <div>
+    <div className="form-with-button">
       <button
         className="open-filter-button"
         type="button"
@@ -131,152 +110,155 @@ function FormWithButton({ setFetchLink }: FormWithButtonProps) {
       >
         <img
           className="open-filter-img"
-          src="menu_burger_icon.webp"
+          src="public/button-icon-burger-menu.png"
           alt="menu burger"
         />
       </button>
 
       {isFormVisible && (
-        <form className="box-container" onSubmit={handleSubmit}>
-          <button
-            type="button"
+        <>
+          {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+          <div
+            className="overlay-background active"
             onClick={handleButtonClick}
-            className="close-button"
-          >
-            X
-          </button>
-
-          <p className="text-style-center">
-            Envie d'une recette particulière ?
-          </p>
-          <input
-            className="prettier-box-form"
-            type="text"
-            placeholder="Nom de la recette"
-            value={recipeChoice}
-            onChange={(e) => setRecipeChoice(e.target.value)}
           />
-          <p className="text-style">Filtres diététiques :</p>
+          <form className="box-container" onSubmit={handleSubmit}>
+            <p className="text-style-center">
+              Envie d'une recette particulière ?
+            </p>
+            <input
+              className="prettier-box-form"
+              type="text"
+              placeholder="Nom de la recette"
+              value={recipeChoice}
+              onChange={(e) => setRecipeChoice(e.target.value)}
+            />
+            <p className="text-style">Filtres diététiques :</p>
 
-          <div className="diet-filter-container">
-            {["Gluten Free", "Vegetarian", "Vegan"].map((filter) => (
-              <label className="diet-filter" key={filter}>
-                <input
-                  className="checkbox-cursor"
-                  type="checkbox"
-                  value={filter}
-                  checked={dietaryFilters.includes(filter)}
-                  onChange={(e) =>
-                    setDietaryFilters((prevFilters) =>
-                      prevFilters.includes(e.target.value)
-                        ? prevFilters.filter((f) => f !== e.target.value)
-                        : [...prevFilters, e.target.value],
+            <div className="diet-filter-container">
+              {["Gluten Free", "Vegetarian", "Vegan"].map((filter) => (
+                <label className="diet-filter" key={filter}>
+                  <input
+                    className="checkbox-cursor"
+                    type="checkbox"
+                    value={filter}
+                    checked={dietaryFilters.includes(filter)}
+                    onChange={(e) =>
+                      setDietaryFilters((prevFilters) =>
+                        prevFilters.includes(e.target.value)
+                          ? prevFilters.filter((f) => f !== e.target.value)
+                          : [...prevFilters, e.target.value],
+                      )
+                    }
+                  />
+                  {filter}
+                </label>
+              ))}
+            </div>
+
+            <div>
+              <p className="text-style">Ajouter des ingrédients :</p>
+              <input
+                className="prettier-box-form"
+                type="text"
+                placeholder="Ingrédient à inclure"
+                value={valueInclude}
+                onChange={(e) => handleInputChange(e, "include")}
+                onKeyDown={(e) => handleKeyDown(e, "include")}
+              />
+              {valueInclude && (
+                <ul className="autocomplete-list">
+                  {ingredient
+                    .filter((item) =>
+                      item.toLowerCase().startsWith(valueInclude.toLowerCase()),
                     )
-                  }
-                />
-                {filter}
-              </label>
-            ))}
-          </div>
-
-          <div>
-            <p className="text-style">Ajouter des ingrédients :</p>
-            <input
-              className="prettier-box-form"
-              type="text"
-              placeholder="Ingrédient à inclure"
-              value={valueInclude}
-              onChange={(e) => handleInputChange(e, "include")}
-              onKeyDown={(e) => handleKeyDown(e, "include")}
-            />
-            {valueInclude && (
-              <ul className="autocomplete-list">
-                {data
-                  .filter((item) =>
-                    item.toLowerCase().startsWith(valueInclude.toLowerCase()),
-                  )
-                  .map((item, index) => (
-                    <li
-                      key={item}
-                      onClick={() => handleSelectInclude(item)}
-                      onMouseEnter={() => setActiveIndexInclude(index)}
-                      onKeyDown={(event) => {
-                        if (event.key === "Enter" || event.key === " ") {
-                          event.preventDefault();
-                          handleSelectInclude(item);
+                    .map((item, index) => (
+                      <li
+                        key={item}
+                        onClick={() => handleSelectInclude(item)}
+                        onMouseEnter={() => setActiveIndexInclude(index)}
+                        onKeyDown={(event) => {
+                          if (event.key === "Enter" || event.key === " ") {
+                            event.preventDefault();
+                            handleSelectInclude(item);
+                          }
+                        }}
+                        className={
+                          index === activeIndexInclude
+                            ? "autocomplete-item active"
+                            : "autocomplete-item"
                         }
-                      }}
-                      className={
-                        index === activeIndexInclude
-                          ? "autocomplete-item active"
-                          : "autocomplete-item"
-                      }
-                    >
-                      {item}
-                    </li>
-                  ))}
-              </ul>
-            )}
-            {includedIngredients.length > 0 && (
-              <p className="choice-list-selection">
-                Ingrédients ajoutés : {includedIngredients.join(", ")}
-              </p>
-            )}
-          </div>
+                      >
+                        {item}
+                      </li>
+                    ))}
+                </ul>
+              )}
+              {includedIngredients.length > 0 && (
+                <p className="choice-list-selection">
+                  Ingrédients ajoutés : {includedIngredients.join(", ")}
+                </p>
+              )}
+            </div>
 
-          <div>
-            <p className="text-style">Exclure des ingrédients :</p>
-            <input
-              className="prettier-box-form"
-              type="text"
-              placeholder="Ingrédient à exclure"
-              value={valueExclude}
-              onChange={(e) => handleInputChange(e, "exclude")}
-              onKeyDown={(e) => handleKeyDown(e, "exclude")}
-            />
-            {valueExclude && (
-              <ul className="autocomplete-list">
-                {data
-                  .filter((item) =>
-                    item.toLowerCase().startsWith(valueExclude.toLowerCase()),
-                  )
-                  .map((item, index) => (
-                    <li
-                      key={item}
-                      onClick={() => handleSelectExclude(item)}
-                      onMouseEnter={() => setActiveIndexExclude(index)}
-                      onKeyDown={(event) => {
-                        if (event.key === "Enter" || event.key === " ") {
-                          event.preventDefault();
-                          handleSelectExclude(item);
+            <div>
+              <p className="text-style">Exclure des ingrédients :</p>
+              <input
+                className="prettier-box-form"
+                type="text"
+                placeholder="Ingrédient à exclure"
+                value={valueExclude}
+                onChange={(e) => handleInputChange(e, "exclude")}
+                onKeyDown={(e) => handleKeyDown(e, "exclude")}
+              />
+              {valueExclude && (
+                <ul className="autocomplete-list">
+                  {ingredient
+                    .filter((item) =>
+                      item.toLowerCase().startsWith(valueExclude.toLowerCase()),
+                    )
+                    .map((item, index) => (
+                      <li
+                        key={item}
+                        onClick={() => handleSelectExclude(item)}
+                        onMouseEnter={() => setActiveIndexExclude(index)}
+                        onKeyDown={(event) => {
+                          if (event.key === "Enter" || event.key === " ") {
+                            event.preventDefault();
+                            handleSelectExclude(item);
+                          }
+                        }}
+                        className={
+                          index === activeIndexExclude
+                            ? "autocomplete-item active"
+                            : "autocomplete-item"
                         }
-                      }}
-                      className={
-                        index === activeIndexExclude
-                          ? "autocomplete-item active"
-                          : "autocomplete-item"
-                      }
-                    >
-                      {item}
-                    </li>
-                  ))}
-              </ul>
-            )}
-            {excludedIngredients.length > 0 && (
-              <p className="choice-list-selection">
-                Ingrédients exclus : {excludedIngredients.join(", ")}
-              </p>
-            )}
-          </div>
-          <div className="bot-button-containner">
-            <button className="bot-button" type="submit">
-              Envoyer
-            </button>
-            <button className="bot-button" type="button" onClick={handleClear}>
-              Réinitialiser
-            </button>
-          </div>
-        </form>
+                      >
+                        {item}
+                      </li>
+                    ))}
+                </ul>
+              )}
+              {excludedIngredients.length > 0 && (
+                <p className="choice-list-selection">
+                  Ingrédients exclus : {excludedIngredients.join(", ")}
+                </p>
+              )}
+            </div>
+            <div className="bot-button-containner">
+              <button className="bot-button" type="submit">
+                Envoyer
+              </button>
+              <button
+                className="bot-button"
+                type="button"
+                onClick={handleClear}
+              >
+                Réinitialiser
+              </button>
+            </div>
+          </form>
+        </>
       )}
     </div>
   );

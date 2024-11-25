@@ -3,6 +3,10 @@ export interface RecipeData {
   title: string;
   image: string;
 }
+interface FormWithButtonProps {
+  setFetchLink: React.Dispatch<React.SetStateAction<string>>;
+  fetchLink: string;
+}
 
 export interface RecipeDetails extends RecipeData {
   readyInMinutes: number;
