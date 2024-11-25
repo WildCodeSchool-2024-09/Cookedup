@@ -7,7 +7,7 @@ interface AsideProps {
 function Aside({ imgSrc }: AsideProps) {
   return (
     <>
-      <header className="main-aside">
+      <section className="main-aside">
         <img className="cookedup-logo" src={imgSrc} alt="Cooked Up logo" />
         <nav className="aside-nav">
           <ul>
@@ -16,7 +16,7 @@ function Aside({ imgSrc }: AsideProps) {
             <li>Ma shopping liste</li>
           </ul>
         </nav>
-      </header>
+      </section>
     </>
   );
 }
