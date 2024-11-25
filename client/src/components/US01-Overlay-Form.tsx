@@ -1,5 +1,5 @@
-import type { FormWithButtonProps } from "../types/Home";
 import { useState } from "react";
+import type { FormWithButtonProps } from "../types/Home";
 import "../assets/styles/US01-Overlay-Form.css";
 import ingredient from "./IngredientArray";
 function FormWithButton({ setFetchLink }: FormWithButtonProps) {
