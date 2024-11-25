@@ -4,10 +4,9 @@ export interface RecipeData {
   image: string;
 }
 interface FormWithButtonProps {
-  setFetchLink: React.Dispatch<React.SetStateAction<string>>;
-  fetchLink: string;
+  setNewFetch: React.Dispatch<React.SetStateAction<string>>;
+  newFetch: string;
 }
-
 export interface RecipeDetails extends RecipeData {
   readyInMinutes: number;
   summary: string;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { FormWithButtonProps } from "../types/Home";
 import "../assets/styles/US01-Overlay-Form.css";
 import ingredient from "./IngredientArray";
-function FormWithButton({ setFetchLink }: FormWithButtonProps) {
+function FormWithButton({ setNewFetch }: FormWithButtonProps) {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [recipeChoice, setRecipeChoice] = useState<string>("");
   const [dietaryFilters, setDietaryFilters] = useState<string[]>([]);
@@ -82,13 +82,13 @@ function FormWithButton({ setFetchLink }: FormWithButtonProps) {
     const validExcludedIngredients = excludedIngredients.filter(
       (ingredient) => ingredient.trim() !== "",
     );
-    const newFetch = `https://api.spoonacular.com/recipes/complexSearch?query=${encodeURIComponent(recipeChoice)}&apiKey=${MyApiKey}&diet=${encodeURIComponent(dietaryFilters.join(", "))}&includeIngredients=${encodeURIComponent(includedIngredients.join(", "))}&excludeIngredients=${encodeURIComponent(validExcludedIngredients.join(", "))}&number=30`;
-    setFetchLink(newFetch);
+    const newFetched = `https://api.spoonacular.com/recipes/complexSearch?query=${encodeURIComponent(recipeChoice)}&apiKey=${MyApiKey}&diet=${encodeURIComponent(dietaryFilters.join(", "))}&includeIngredients=${encodeURIComponent(includedIngredients.join(", "))}&excludeIngredients=${encodeURIComponent(validExcludedIngredients.join(", "))}&number=30`;
+    setNewFetch(newFetched);
   };
 
   // Réinitialiser le formulaire
   const handleClear = () => {
-    setFetchLink(
+    setNewFetch(
       `https://api.spoonacular.com/recipes/random?apiKey=${MyApiKey}&number=10`,
     );
     setRecipeChoice("");
@@ -117,8 +117,8 @@ function FormWithButton({ setFetchLink }: FormWithButtonProps) {
 
       {isFormVisible && (
         <>
-          {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-          <div
+          <button
+            type="button"
             className="overlay-background active"
             onClick={handleButtonClick}
           />

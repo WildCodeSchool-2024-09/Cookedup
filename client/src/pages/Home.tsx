@@ -11,17 +11,17 @@ import "../assets/styles/Header.css";
 function Home() {
   const [recipes, setRecipes] = useState<null | RecipeData[]>(null);
   const MyApiKey = import.meta.env.VITE_API_KEY;
-  const [fetchLink, setFetchLink] = useState<string>(
+  const [newFetch, setNewFetch] = useState<string>(
     `https://api.spoonacular.com/recipes/random?apiKey=${MyApiKey}&number=10`,
   );
 
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await fetch(fetchLink);
+        const response = await fetch(newFetch);
         const data = await response.json();
 
-        if (fetchLink.includes("complexSearch")) {
+        if (newFetch.includes("complexSearch")) {
           setRecipes(data.results);
         } else {
           setRecipes(data.recipes);
@@ -30,10 +30,10 @@ function Home() {
     };
 
     fetchRecipes();
-  }, [fetchLink]);
+  }, [newFetch]);
   return (
     <>
-      <FormWithButton setFetchLink={setFetchLink} fetchLink={fetchLink} />
+      <FormWithButton setNewFetch={setNewFetch} newFetch={newFetch} />
       <main className="main-home">
         <ScrollToTop />
         <Aside imgSrc="public/images/CookedUpLogo.webp" />
