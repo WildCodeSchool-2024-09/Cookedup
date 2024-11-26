@@ -4,6 +4,11 @@ export interface RecipeData {
   image: string;
 }
 
+export interface SimilarData extends RecipeData {
+  sourceUrl: string;
+  imageType: string;
+}
+
 export interface RecipeDetails extends RecipeData {
   readyInMinutes: number;
   summary: string;
