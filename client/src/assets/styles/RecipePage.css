@@ -54,6 +54,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1em;
+  gap: 2em;
 }
 
 .header-recipe {
@@ -125,6 +126,12 @@
 
 .footer-recipe {
   gap: 2em;
+}
+
+.recipe-similar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
 }
 
 @media screen and (max-width: 720px) {
