@@ -1,4 +1,4 @@
-import "../assets/styles/HomePage.css";
+import "../assets/styles/Aside.css";
 
 interface AsideProps {
   imgSrc: string;

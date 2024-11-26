@@ -1,17 +1,17 @@
+.recipe-card {
+  display: grid;
+  background-color: rgb(230, 237, 230);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 5px 5px 5px grey;
+}
+
 .recipe-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, 160px);
   gap: 22px;
-}
-
-.recipe-card {
-  display: grid;
-  width: auto-fit;
-  background-color: rgb(230, 237, 230);
-  border-radius: 10px;
-  font-size: 0.6rem;
-  text-align: center;
-  box-shadow: 5px 5px 5px grey;
+  margin: 20px;
+  padding: 20px;
 }
 
 .food-img {
@@ -21,6 +21,26 @@
   border-top-right-radius: 10px;
 }
 
-button {
-  margin: 16px;
+.recipe-title {
+  font-size: 0.8rem;
+  margin: 10px;
+}
+
+.card-button {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 2fr 2fr;
+  margin-bottom: 8px;
+}
+
+.like-button {
+  border-style: none;
+  background-color: rgb(230, 237, 230);
+  font-size: 2rem;
+}
+
+.cart-button {
+  border-style: none;
+  background-color: rgb(230, 237, 230);
+  font-size: 1.3rem;
 }
