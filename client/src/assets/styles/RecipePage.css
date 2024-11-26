@@ -85,7 +85,12 @@
   }
 }
 
-.header-recipe-info > span {
+.header-recipe-info > div {
+  display: flex;
+  gap: 8px;
+}
+
+.header-recipe-info > div > p {
   font-style: oblique;
   font-weight: bold;
   color: #ffcc00;
@@ -100,6 +105,9 @@
 }
 
 .ingredients figure {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
   place-items: center;
   padding: 1em;
   margin: 0;
@@ -131,7 +139,7 @@
 .recipe-similar {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 8px;
+  grid-gap: 1em;
 }
 
 @media screen and (max-width: 720px) {

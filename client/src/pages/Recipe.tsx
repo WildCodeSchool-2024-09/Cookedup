@@ -23,7 +23,7 @@ function Recipe() {
 
   useEffect(() => {
     fetch(
-      `https://api.spoonacular.com/recipes/${id}/similar?apiKey=${MyApiKey}`,
+      `https://api.spoonacular.com/recipes/${id}/similar?apiKey=${MyApiKey}&number=3`,
     )
       .then((response) => response.json())
       .then((data) => {
@@ -48,14 +48,15 @@ function Recipe() {
             <h1>{`${recipeDetails?.title}`}</h1>
             <section className="header-recipe-info">
               <p>{`Temps de préparation : ${recipeDetails?.readyInMinutes}mn`}</p>
-
-              {recipeDetails?.diets.map((diet) => {
-                return (
-                  <span key={diet}>
-                    {`#${diet.includes(" ") ? diet.replace(/" "/g, "") : diet}`}
-                  </span>
-                );
-              })}
+              <div>
+                {recipeDetails?.diets.map((diet) => {
+                  return (
+                    <p key={diet}>
+                      {`#${diet.includes(" ") ? diet.split(" ").join("") : diet}`}
+                    </p>
+                  );
+                })}
+              </div>
             </section>
             <section className="header-recipe-buttons">
               <button type="button" className="add-list-button">
@@ -106,7 +107,7 @@ function Recipe() {
                     key={sim.id}
                     id={sim.id}
                     title={sim.title}
-                    image={`${sim.sourceUrl}.${sim.imageType}`}
+                    image={`https://img.spoonacular.com/recipes/${sim.id}-556x370.${sim.imageType}`}
                   />
                 );
               })}
