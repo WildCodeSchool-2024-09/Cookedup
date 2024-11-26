@@ -1,51 +1,17 @@
-#root {
-  background-color: rgba(244, 246, 248, 0.941);
-}
-
 .main-home {
   display: grid;
-  grid-template-columns: 250px auto;
+  background-color: rgba(244, 246, 248, 0.941);
+  grid-template-rows: 1fr;
+  margin-left: 37vh;
 }
 
 .recipe-list {
   justify-content: center;
+  grid-column: 1 / span 2;
 }
 
-.main-aside {
-  display: none;
-  background-color: rgb(230, 237, 230);
-  justify-items: center;
-}
-
-.aside-nav {
-  display: flex;
-  flex-direction: column;
-}
-
-.aside-nav ul {
-  list-style: none;
-  padding: 20px;
-}
-
-.aside-nav ul li {
-  padding: 5px;
-}
-
-.cookedup-logo {
-  height: 200px;
-  width: 200px;
-}
-
-@media (min-width: 720px) {
-  .main-aside {
-    display: block; /* Le header réapparaît */
-    grid-area: header; /* Assure que le header occupe la zone définie dans Grid */
-  }
-
+@media (max-width: 760px) {
   .main-home {
-    display: grid;
-    grid-template-areas:
-      "header main"
-      "header footer";
+    margin-left: 0;
   }
 }

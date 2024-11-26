@@ -1,7 +1,6 @@
 import RecipeCard from "../components/RecipeCard";
 import "../assets/styles/HomePage.css";
 import { useEffect, useState } from "react";
-import Aside from "../components/Aside";
 import ScrollToTop from "../components/ScrollToTop";
 import FormWithButton from "../components/US01-Overlay-Form";
 import type { RecipeData } from "../types/Home";
@@ -26,8 +25,6 @@ function Home() {
     <>
       <FormWithButton />
       <main className="main-home">
-        <ScrollToTop />
-        <Aside imgSrc="public/images/CookedUpLogo.webp" />
         <section className="recipe-list">
           {recipes?.map((element) => (
             <RecipeCard
@@ -38,6 +35,7 @@ function Home() {
             />
           ))}
         </section>
+        <ScrollToTop />
       </main>
     </>
   );
