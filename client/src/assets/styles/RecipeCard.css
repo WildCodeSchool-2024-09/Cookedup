@@ -1,6 +1,6 @@
 .recipe-card {
   display: grid;
-  background-color: rgb(230, 237, 230);
+  background-color: var(--primary-color);
   border-radius: 10px;
   text-align: center;
   box-shadow: 5px 5px 5px grey;
@@ -35,12 +35,12 @@
 
 .like-button {
   border-style: none;
-  background-color: rgb(230, 237, 230);
+  background-color: var(--primary-color);
   font-size: 2rem;
 }
 
 .cart-button {
   border-style: none;
-  background-color: rgb(230, 237, 230);
+  background-color: var(--primary-color);
   font-size: 1.3rem;
 }

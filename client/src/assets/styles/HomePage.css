@@ -1,6 +1,6 @@
 .main-home {
   display: grid;
-  background-color: rgba(244, 246, 248, 0.941);
+  background-color: var(--light-version);
   grid-template-rows: 1fr;
   margin-left: 37vh;
 }
