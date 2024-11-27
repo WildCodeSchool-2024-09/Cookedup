@@ -9,6 +9,11 @@ export interface SimilarData extends RecipeData {
   imageType: string;
 }
 
+interface FormWithButtonProps {
+  setNewFetch: React.Dispatch<React.SetStateAction<string>>;
+  newFetch: string;
+}
+
 export interface RecipeDetails extends RecipeData {
   readyInMinutes: number;
   summary: string;

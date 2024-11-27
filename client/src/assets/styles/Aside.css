@@ -1,0 +1,34 @@
+.main-aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(230, 237, 230);
+  justify-items: center;
+  height: 100%;
+  width: 37vh;
+}
+
+.aside-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.aside-nav ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.aside-nav ul li {
+  padding: 5px;
+}
+
+.cookedup-logo {
+  height: 200px;
+  width: 200px;
+}
+
+@media (max-width: 720px) {
+  .main-aside {
+    display: none;
+  }
+}

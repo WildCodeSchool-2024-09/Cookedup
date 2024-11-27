@@ -1,14 +1,39 @@
-.box-container {
-  background-color: #a5e6b2;
-  filter: drop-shadow(-2mm -2mm 3mm #657267);
+.overlay-background {
+  position: fixed;
+  top: -3vh;
+  left: -3vw;
+  width: 110vw;
+  height: 110vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.form-with-button {
+  font-family: "Poppins", sans-serif;
+}
+.overlay-background.active {
+  opacity: 1;
+  pointer-events: all;
+}
 
+.box-container {
   display: flex;
+  position: fixed;
   justify-content: center;
   flex-direction: column;
+  top: 4%;
+  left: 0;
+  z-index: 3;
+  background-color: #d9e6d3;
+  filter: drop-shadow(-2mm -2mm 3mm #657267);
   width: 30vw;
   margin-left: 35%;
-  margin-top: 4%;
-  border-radius: 8%;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+  height: 90vh;
 }
 .open-filter-img {
   width: 2vw;
@@ -20,9 +45,11 @@
   top: 3%;
   border-radius: 8px;
   background-color: #dbf4e0;
-  border-color: #4bbd33;
   cursor: pointer;
   position: fixed;
+  opacity: 1;
+  height: 6vh;
+  width: auto;
 }
 
 .close-button {
@@ -102,9 +129,12 @@
 }
 
 .bot-button {
-  width: auto;
-  margin: 1.2rem 0 1rem 0;
-  cursor: pointer;
+  width: 10em;
+  height: 2.5em;
+  border: none;
   border-radius: 8px;
-  filter: drop-shadow(0mm 0mm 1.5mm #657267);
+  background-color: #e2b500be;
+  color: white;
+  cursor: pointer;
+  margin: 19px;
 }
