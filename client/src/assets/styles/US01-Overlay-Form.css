@@ -1,7 +1,6 @@
 .box-container {
   background-color: #a5e6b2;
   filter: drop-shadow(-2mm -2mm 3mm #657267);
-
   display: flex;
   justify-content: center;
   flex-direction: column;

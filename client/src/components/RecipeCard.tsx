@@ -6,6 +6,11 @@ import type { RecipeData } from "../types/Home";
 function RecipeCard({ id, title, image }: RecipeData) {
   const [isFavorite, setIsFavorite] = useState(true);
 
+  // useEffect(() => {
+  //   const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  //   setIsFavorite(storedFavorites.some((fav) => fav.id === id));
+  // }, [id]);
+
   const toggleFavorite = () => {
     setIsFavorite((prev) => !prev);
   };

@@ -6,6 +6,7 @@ import FormWithButton from "../components/US01-Overlay-Form";
 import type { RecipeData } from "../types/Home";
 import "../assets/styles/Footer.css";
 import "../assets/styles/Header.css";
+import Favorites from "../components/Favorites";
 
 function Home() {
   const [recipes, setRecipes] = useState<null | RecipeData[]>(null);
@@ -24,6 +25,7 @@ function Home() {
   return (
     <>
       <FormWithButton />
+      <Favorites />
       <main className="main-home">
         <section className="recipe-list">
           {recipes?.map((element) => (
