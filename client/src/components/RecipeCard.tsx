@@ -13,7 +13,7 @@ function RecipeCard({ id, title, image }: RecipeData) {
   return (
     <>
       <section className="recipe-card">
-        <NavLink to={`Recipe/${id}`}>
+        <NavLink to={`/Recipe/${id}`}>
           <img
             src={image}
             alt={`Representation of ${title} recipe`}

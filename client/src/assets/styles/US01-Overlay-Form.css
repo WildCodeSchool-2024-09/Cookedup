@@ -40,7 +40,6 @@
   height: auto;
 }
 .open-filter-button {
-  position: absolute;
   right: 1%;
   top: 3%;
   border-radius: 8px;
@@ -55,7 +54,6 @@
 .close-button {
   width: 2vw;
   height: 5vh;
-
   background-color: transparent;
   margin-left: 27vw;
   margin-top: 1.4vh;
