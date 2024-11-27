@@ -46,6 +46,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
     <>
       <section className="recipe-card">
         <NavLink to={`Recipe/${recipe.id}`}>
+
           <img
             src={recipe.image}
             alt={`Representation of ${recipe.title} recipe`}

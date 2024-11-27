@@ -18,22 +18,30 @@ export interface RecipeData {
 interface RecipeCardProps {
   recipe: RecipeData;
 }
+
+export interface SimilarRecipeData extends RecipeData {
+  sourceUrl: string;
+  imageType: string;
+}
+
 interface FormWithButtonProps {
   setNewFetch: React.Dispatch<React.SetStateAction<string>>;
   newFetch: string;
 }
+
 export interface RecipeDetails extends RecipeData {
   readyInMinutes: number;
   summary: string;
-  extendedIngredients: [
-    {
-      amount: number;
-      id: number;
-      original: string;
-      name: string;
-      image: string;
-    },
-  ];
+  diets: string[];
+  extendedIngredients: {
+    amount: number;
+    id: number;
+    original: string;
+    name: string;
+    image: string;
+    unit: string;
+  }[];
+
   analyzedInstructions: [
     {
       steps: [
