@@ -165,6 +165,10 @@
 
   .return-arrow {
     left: 0;
+    top: 0.2em;
+    border: 1px solid yellow;
+    border-radius: 8px;
+    padding: 0.2em 0.5em;
   }
 
   .aside-recipe img {
@@ -191,6 +195,8 @@
 
   .header-recipe-info {
     display: flex;
+    flex-direction: column;
+    padding: 2em;
     gap: 2em;
     background-color: #dbf4e0;
     width: 100%;
@@ -198,6 +204,10 @@
     align-items: center;
     height: 7em;
     order: 2;
+  }
+
+  .header-recipe-info p {
+    margin: 0;
   }
 
   .header-recipe-buttons {
@@ -216,6 +226,6 @@
   }
 
   .preparation > ul {
-    width: 100%;
+    width: 80%;
   }
 }

@@ -13,8 +13,10 @@
   color: black;
 }
 
-@media (max-width: 760px) {
+@media screen and (max-width: 720px) {
   .footer-container {
+    display: flex;
     margin-left: 0;
+    gap: 1em;
   }
 }
