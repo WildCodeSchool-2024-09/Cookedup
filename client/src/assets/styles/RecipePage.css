@@ -47,10 +47,14 @@
 
 .ingredients,
 .preparation,
-.header-recipe {
+.header-recipe,
+.footer-recipe {
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  gap: 2em;
 }
 
 .header-recipe {
@@ -63,6 +67,7 @@
 }
 
 .add-list-button {
+  text-align: center;
   width: 10em;
   height: 2.5em;
   border: none;
@@ -70,25 +75,46 @@
   background-color: #ffcc00;
   color: white;
   cursor: pointer;
+  font-weight: bolder;
+
+  &:hover {
+    color: #ffcc00;
+    border: 1px solid #ffcc00;
+    background-color: transparent;
+    transition: all 0.4s ease-in-out;
+  }
+}
+
+.header-recipe-info > div {
+  display: flex;
+  gap: 8px;
+}
+
+.header-recipe-info > div > p {
+  font-style: oblique;
+  font-weight: bold;
+  color: #ffcc00;
 }
 
 .ingredients article {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1em;
+  padding: 2em;
 }
 
 .ingredients figure {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 9%;
+  gap: 1em;
+  place-items: center;
+  padding: 1em;
   margin: 0;
 }
 
 .ingredients article img {
-  height: 70%;
+  height: 33%;
   width: 100%;
   object-fit: contain;
 }
@@ -104,6 +130,16 @@
 
 .preparation li p:first-child {
   font-weight: bold;
+}
+
+.footer-recipe {
+  gap: 2em;
+}
+
+.recipe-similar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
 }
 
 @media screen and (max-width: 720px) {
