@@ -4,7 +4,7 @@ export interface RecipeData {
   image: string;
 }
 
-export interface SimilarData extends RecipeData {
+export interface SimilarRecipeData extends RecipeData {
   sourceUrl: string;
   imageType: string;
 }
@@ -17,7 +17,7 @@ interface FormWithButtonProps {
 export interface RecipeDetails extends RecipeData {
   readyInMinutes: number;
   summary: string;
-  diets: [string];
+  diets: string[];
   extendedIngredients: [
     {
       amount: number;

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import type { RecipeDetails, SimilarData } from "../types/Home";
+import type { RecipeDetails, SimilarRecipeData } from "../types/Home";
 import "../assets/styles/RecipePage.css";
 import "../assets/styles/RecipeCard.css";
 import RecipeCard from "../components/RecipeCard";
 
 function Recipe() {
   const [recipeDetails, setRecipeDetails] = useState<null | RecipeDetails>();
-  const [similars, setSimilar] = useState<null | SimilarData[]>(null);
+  const [similars, setSimilar] = useState<null | SimilarRecipeData[]>(null);
   const { id } = useParams();
   const MyApiKey = import.meta.env.VITE_API_KEY;
 
