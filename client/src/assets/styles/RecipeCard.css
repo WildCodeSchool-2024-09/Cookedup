@@ -39,8 +39,18 @@
   font-size: 2rem;
 }
 
+.like-button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
 .cart-button {
   border-style: none;
   background-color: rgb(230, 237, 230);
   font-size: 1.3rem;
+}
+
+.cart-button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
