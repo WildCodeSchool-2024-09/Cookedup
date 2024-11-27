@@ -138,3 +138,23 @@
   cursor: pointer;
   margin: 19px;
 }
+
+@media screen and (max-width: 720px) {
+  .open-filter-button {
+    display: flex;
+    align-items: center;
+    width: 6%;
+    right: 3%;
+    border: none;
+  }
+
+  .open-filter-img {
+    width: 100%;
+  }
+
+  .box-container {
+    margin: 0;
+    left: 14em;
+    width: 40%;
+  }
+}
