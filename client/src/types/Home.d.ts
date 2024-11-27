@@ -18,16 +18,15 @@ export interface RecipeDetails extends RecipeData {
   readyInMinutes: number;
   summary: string;
   diets: string[];
-  extendedIngredients: [
-    {
-      amount: number;
-      id: number;
-      original: string;
-      name: string;
-      image: string;
-      unit: string;
-    },
-  ];
+  extendedIngredients: {
+    amount: number;
+    id: number;
+    original: string;
+    name: string;
+    image: string;
+    unit: string;
+  }[];
+
   analyzedInstructions: [
     {
       steps: [
