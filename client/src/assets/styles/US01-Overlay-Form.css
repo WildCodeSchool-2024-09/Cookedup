@@ -11,9 +11,7 @@
   opacity: 0;
   pointer-events: none;
 }
-.form-with-button {
-  font-family: "Poppins", sans-serif;
-}
+
 .overlay-background.active {
   opacity: 1;
   pointer-events: all;
@@ -27,7 +25,7 @@
   top: 4%;
   left: 0;
   z-index: 3;
-  background-color: #d9e6d3;
+  background-color: var(--primary-color);
   filter: drop-shadow(-2mm -2mm 3mm #657267);
   width: 30vw;
   margin-left: 35%;
@@ -43,7 +41,7 @@
   right: 1%;
   top: 3%;
   border-radius: 8px;
-  background-color: #dbf4e0;
+  background-color: var(--primary-color);
   cursor: pointer;
   position: fixed;
   opacity: 1;
@@ -73,6 +71,7 @@
 .choice-list-selection {
   margin: 1rem 0 1.5rem 1rem;
 }
+
 .diet-filter-container {
   display: flex;
   flex-wrap: wrap;
@@ -86,9 +85,11 @@
   gap: 5px;
   cursor: pointer;
 }
+
 .checkbox-cursor {
   cursor: pointer;
 }
+
 .prettier-box-form {
   border-radius: 8px;
   width: 28vw;
@@ -97,7 +98,7 @@
 }
 
 .selected {
-  background-color: #e0e0e0;
+  background-color: var(--light-version);
   cursor: pointer;
 }
 .autocomplete-list {
@@ -107,7 +108,7 @@
   border: 1px solid #ccc;
   max-height: 150px;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: var(--light-version);
 }
 
 .autocomplete-item {
@@ -131,8 +132,8 @@
   height: 2.5em;
   border: none;
   border-radius: 8px;
-  background-color: #e2b500be;
-  color: white;
+  background-color: var(--button-color);
+  color: var(--light-version);
   cursor: pointer;
   margin: 19px;
 }

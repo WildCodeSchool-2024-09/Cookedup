@@ -1,3 +1,32 @@
+:root {
+  --light-version: #f4f6f8f0;
+  --primary-color: #e6ede6;
+  --secondary-color: #ffcc00;
+  --title-font: ;
+  --title-primary-size: 2em;
+  --title-secondary-size: 1.5em;
+  --text-font: "Poppins", sans-serif;
+  --button-color: #ffcc00;
+  --button-color-hover: transparent;
+}
+
 #root {
-  background-color: rgba(244, 246, 248, 0.941);
+  background-color: var(--light-version);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--text-font);
+}
+
+h1 {
+  font-size: var(--title-primary-size);
+}
+
+h2 {
+  font-size: var(--title-secondary-size);
 }
