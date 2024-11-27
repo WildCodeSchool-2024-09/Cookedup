@@ -1,7 +1,22 @@
+export interface Ingredient {
+  title: string;
+  quantity: number;
+  unit: string;
+}
+
 export interface RecipeData {
   id: number;
   title: string;
   image: string;
+  extendedIngredients?: {
+    measures: {
+      metric: { amount: number; unitShort: string };
+    };
+    name: string;
+  }[];
+}
+interface RecipeCardProps {
+  recipe: RecipeData;
 }
 interface FormWithButtonProps {
   setNewFetch: React.Dispatch<React.SetStateAction<string>>;

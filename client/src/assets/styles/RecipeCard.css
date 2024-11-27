@@ -37,10 +37,12 @@
   border-style: none;
   background-color: rgb(230, 237, 230);
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .cart-button {
   border-style: none;
   background-color: rgb(230, 237, 230);
   font-size: 1.3rem;
+  cursor: pointer;
 }
