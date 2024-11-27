@@ -7,16 +7,28 @@ function myFavorites() {
 
   return (
     <>
-      <button className="open-fav" type="button" onClick={handleButtonFav}>
+      <button
+        className="open-fav-button"
+        type="button"
+        onClick={handleButtonFav}
+      >
         🧡
       </button>
-      <section className="favorites-container">
-        {isFavVisible && (
+      {isFavVisible && (
+        <>
+          <section className="favorites-background" />
           <section className="favorites-list">
-            <h2>Mes Favoris</h2>
+            <h1> Mes recettes favorites </h1>
+            <button
+              type="button"
+              className="closing-fav-list-button"
+              onClick={handleButtonFav}
+            >
+              ✖
+            </button>
           </section>
-        )}
-      </section>
+        </>
+      )}
     </>
   );
 }
