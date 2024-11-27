@@ -33,7 +33,7 @@
 
 .return-arrow {
   font-size: 2em;
-  color: #ffcc00;
+  color: var(--button-color);
   margin: 0.2em;
   text-decoration: none;
   background-color: transparent;
@@ -63,7 +63,7 @@
 
 .header-recipe h1 {
   text-align: center;
-  font-size: 1.5em;
+  font-size: var(--title-primary-size);
 }
 
 .add-list-button {
@@ -72,15 +72,15 @@
   height: 2.5em;
   border: none;
   border-radius: 8px;
-  background-color: #ffcc00;
-  color: white;
+  background-color: var(--button-color);
+  color: var(--light-version);
   cursor: pointer;
   font-weight: bolder;
 
   &:hover {
-    color: #ffcc00;
-    border: 1px solid #ffcc00;
-    background-color: transparent;
+    color: var(--button-color);
+    border: 1px solid var(--button-color);
+    background-color: var(--button-color-hover);
     transition: all 0.4s ease-in-out;
   }
 }
@@ -93,7 +93,7 @@
 .header-recipe-info > div > p {
   font-style: oblique;
   font-weight: bold;
-  color: #ffcc00;
+  color: var(--button-color);
 }
 
 .ingredients article {
@@ -117,6 +117,7 @@
   height: 33%;
   width: 100%;
   object-fit: contain;
+  background-color: var(--button-color-hover);
 }
 
 .ingredients figcaption {
@@ -198,7 +199,6 @@
     flex-direction: column;
     padding: 2em;
     gap: 2em;
-    background-color: #dbf4e0;
     width: 100%;
     justify-content: center;
     align-items: center;

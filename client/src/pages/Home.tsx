@@ -6,6 +6,7 @@ import FormWithButton from "../components/US01-Overlay-Form";
 import type { RecipeData } from "../types/Home";
 import "../assets/styles/Footer.css";
 import "../assets/styles/Header.css";
+import ShoppingList from "../components/ShoppingList";
 
 function Home() {
   const [recipes, setRecipes] = useState<null | RecipeData[]>(null);
@@ -32,18 +33,14 @@ function Home() {
   }, [newFetch]);
   return (
     <>
+      <ShoppingList />
       <FormWithButton setNewFetch={setNewFetch} newFetch={newFetch} />
       <main className="main-home">
         <section className="recipe-list">
           {recipes ? (
             recipes.length > 0 ? (
               recipes.map((element) => (
-                <RecipeCard
-                  key={element.id}
-                  id={element.id}
-                  title={element.title}
-                  image={element.image}
-                />
+                <RecipeCard key={element.id} recipe={element} />
               ))
             ) : (
               <p>Aucune recette trouvée.</p>

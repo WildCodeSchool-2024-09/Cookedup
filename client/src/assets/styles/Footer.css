@@ -1,6 +1,6 @@
 .footer-container {
   display: flex;
-  background-color: rgb(230, 237, 230);
+  background-color: var(--primary-color);
   flex-direction: column;
   justify-content: center;
   text-align: center;
