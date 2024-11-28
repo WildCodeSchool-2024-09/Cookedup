@@ -6,6 +6,14 @@ import type { Ingredient, RecipeCardProps } from "../types/Home";
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
   const [isFavorite, setIsFavorite] = useState(true);
 
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleCartClick = () => {
+    setIsAnimating(true);
+    updateLocalStorage(mainArrayKey, transformedIngredients || []);
+    setTimeout(() => setIsAnimating(false), 850);
+  };
+
   const transformedIngredients = recipe.extendedIngredients?.map(
     (ingredient: {
       name: string;
@@ -46,7 +54,6 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
     <>
       <section className="recipe-card">
         <NavLink to={`Recipe/${recipe.id}`}>
-
           <img
             src={recipe.image}
             alt={`Representation of ${recipe.title} recipe`}
@@ -63,10 +70,8 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
             {isFavorite ? "♡" : "🧡"}
           </button>
           <button
-            className="cart-button"
-            onClick={() =>
-              updateLocalStorage(mainArrayKey, transformedIngredients || [])
-            }
+            className={`cart-button ${isAnimating ? "jello-horizontal" : ""}`}
+            onClick={handleCartClick}
             type="button"
           >
             🛒
