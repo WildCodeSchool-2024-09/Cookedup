@@ -9,6 +9,14 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
   const urlLocation = location.pathname;
   const splitLocation = urlLocation.split("/");
 
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleCartClick = () => {
+    setIsAnimating(true);
+    updateLocalStorage(mainArrayKey, transformedIngredients || []);
+    setTimeout(() => setIsAnimating(false), 850);
+  };
+
   const transformedIngredients = recipe.extendedIngredients?.map(
     (ingredient: {
       name: string;
@@ -72,10 +80,8 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
             {isFavorite ? "♡" : "🧡"}
           </button>
           <button
-            className="cart-button"
-            onClick={() =>
-              updateLocalStorage(mainArrayKey, transformedIngredients || [])
-            }
+            className={`cart-button ${isAnimating ? "jello-horizontal" : ""}`}
+            onClick={handleCartClick}
             type="button"
           >
             🛒
