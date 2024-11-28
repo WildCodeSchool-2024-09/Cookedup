@@ -1,10 +1,13 @@
 import "../assets/styles/RecipeCard.css";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import type { Ingredient, RecipeCardProps } from "../types/Home";
 
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
   const [isFavorite, setIsFavorite] = useState(true);
+  const location = useLocation();
+  const urlLocation = location.pathname;
+  const splitLocation = urlLocation.split("/");
 
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -24,6 +27,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
       unit: ingredient.measures.metric.unitShort,
     }),
   );
+
   function updateLocalStorage(
     mainArrayKey: string,
     newObjects: Ingredient[],
@@ -46,16 +50,22 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
 
     return mainArray;
   }
+
   const mainArrayKey = "ingredientsList";
   const toggleFavorite = () => {
     setIsFavorite((prev) => !prev);
   };
+
   return (
     <>
       <section className="recipe-card">
-        <NavLink to={`Recipe/${recipe.id}`}>
+        <NavLink to={`/Recipe/${recipe.id}`}>
           <img
-            src={recipe.image}
+            src={
+              splitLocation[1] === "Recipe"
+                ? `https://img.spoonacular.com/recipes/${recipe.id}-556x370.${recipe.imageType}`
+                : recipe.image
+            }
             alt={`Representation of ${recipe.title} recipe`}
             className="food-img"
           />

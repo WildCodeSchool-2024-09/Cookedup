@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import type { RecipeDetails, SimilarRecipeData } from "../types/Home";
+import type { RecipeData, RecipeDetails } from "../types/Home";
 import "../assets/styles/RecipePage.css";
 import "../assets/styles/RecipeCard.css";
 import RecipeCard from "../components/RecipeCard";
 
 function Recipe() {
   const [recipeDetails, setRecipeDetails] = useState<null | RecipeDetails>();
-  const [similars, setSimilar] = useState<null | SimilarRecipeData[]>(null);
+  const [similars, setSimilar] = useState<null | RecipeData[]>(null);
   const { id } = useParams();
   const MyApiKey = import.meta.env.VITE_API_KEY;
 
@@ -102,14 +102,7 @@ function Recipe() {
 
             <section className="recipe-similar">
               {similars?.map((sim) => {
-                return (
-                  <RecipeCard
-                    key={sim.id}
-                    id={sim.id}
-                    title={sim.title}
-                    image={`https://img.spoonacular.com/recipes/${sim.id}-556x370.${sim.imageType}`}
-                  />
-                );
+                return <RecipeCard key={sim.id} recipe={sim} />;
               })}
             </section>
           </footer>

@@ -8,6 +8,7 @@ export interface RecipeData {
   id: number;
   title: string;
   image: string;
+  imageType: string;
   extendedIngredients?: {
     measures: {
       metric: { amount: number; unitShort: string };
@@ -15,13 +16,14 @@ export interface RecipeData {
     name: string;
   }[];
 }
+
 interface RecipeCardProps {
   recipe: RecipeData;
 }
 
 export interface SimilarRecipeData extends RecipeData {
-  sourceUrl: string;
-  imageType: string;
+  sourceUrl?: string;
+  imageType?: string;
 }
 
 interface FormWithButtonProps {
@@ -41,7 +43,6 @@ export interface RecipeDetails extends RecipeData {
     image: string;
     unit: string;
   }[];
-
   analyzedInstructions: [
     {
       steps: [

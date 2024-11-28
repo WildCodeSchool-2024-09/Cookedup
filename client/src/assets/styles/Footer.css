@@ -13,8 +13,9 @@
   color: black;
 }
 
-@media (max-width: 760px) {
+@media screen and (max-width: 720px) {
   .footer-container {
     margin-left: 0;
+    gap: 1em;
   }
 }
