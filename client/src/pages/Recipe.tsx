@@ -102,15 +102,7 @@ function Recipe() {
 
             <section className="recipe-similar">
               {similars?.map((sim) => {
-                return (
-                  <RecipeCard
-                    key={sim.id}
-                    recipe={sim}
-                    // id={sim.id}
-                    // title={sim.title}
-                    // image={`https://img.spoonacular.com/recipes/${sim.id}-556x370.${sim.imageType}`}
-                  />
-                );
+                return <RecipeCard key={sim.id} recipe={sim} />;
               })}
             </section>
           </footer>
