@@ -35,6 +35,7 @@ export interface RecipeDetails extends RecipeData {
   readyInMinutes: number;
   summary: string;
   diets: string[];
+  servings: number;
   extendedIngredients: {
     amount: number;
     id: number;
