@@ -47,7 +47,8 @@ function Recipe() {
           <header className="header-recipe">
             <h1>{`${recipeDetails?.title}`}</h1>
             <section className="header-recipe-info">
-              <p>{`Temps de préparation : ${recipeDetails?.readyInMinutes}mn`}</p>
+              <p>{`Ready in : ${recipeDetails?.readyInMinutes}mn`}</p>
+              <p>{`${recipeDetails?.servings} servings`}</p>
               <div>
                 {recipeDetails?.diets.map((diet) => {
                   return (

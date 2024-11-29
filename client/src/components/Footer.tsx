@@ -7,13 +7,13 @@ function Footer() {
   const splitLocation = urlLocation.split("/");
   return (
     <footer
-      className={`footer-container ${splitLocation[1] === "Recipe" ? "visible" : ""}`}
+      className={`footer-container ${splitLocation[1] === "Recipe" || splitLocation[1] === "404_not_found" ? "visible" : ""}`}
     >
-      <Link to="/Copyright">Copyright</Link>
+      <Link to="/404_not_found">Copyright</Link>
 
-      <Link to="/mentions-legales">Mentions légales</Link>
+      <Link to="/404_not_found">Mentions légales</Link>
 
-      <Link to="/conditions-generales">Conditions générales</Link>
+      <Link to="/404_not_found">Conditions générales</Link>
     </footer>
   );
 }

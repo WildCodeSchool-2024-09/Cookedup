@@ -7,7 +7,7 @@ function Header() {
   const splitLocation = urlLocation.split("/");
   return (
     <header
-      className={`header-container ${splitLocation[1] === "Recipe" ? "visible" : ""}`}
+      className={`header-container ${splitLocation[1] === "Recipe" || splitLocation[1] === "404_not_found" ? "visible" : ""}`}
     >
       <section className="kitchen-photo">
         <img

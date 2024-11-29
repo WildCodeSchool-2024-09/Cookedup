@@ -8,6 +8,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import Home from "./pages/Home";
+import Not_found from "./pages/NotFound";
 import Recipe from "./pages/Recipe";
 import ShoppingList from "./pages/ShoppingList";
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/Shopping_list",
         element: <ShoppingList />,
+      },
+      {
+        path: "/404_not_found",
+        element: <Not_found />,
       },
     ],
   },
