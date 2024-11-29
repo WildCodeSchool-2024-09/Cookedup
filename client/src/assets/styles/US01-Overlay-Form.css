@@ -32,6 +32,9 @@
   border-radius: 8px;
   transition: opacity 0.3s ease;
   height: 90vh;
+  min-width: 375px;
+  min-height: 450px;
+  overflow: auto;
 }
 .open-filter-img {
   width: 2vw;
@@ -95,6 +98,7 @@
   width: 28vw;
   height: 8vh;
   margin: 0.4rem 0rem 0.3rem 0.8rem;
+  min-width: 350px;
 }
 
 .selected {
@@ -153,7 +157,7 @@
 
   .box-container {
     margin: 0;
-    left: 14em;
+    left: 8em;
     width: 40%;
     align-items: center;
     gap: 1em;
