@@ -6,6 +6,7 @@ import FormWithButton from "../components/US01-Overlay-Form";
 import type { RecipeData } from "../types/Home";
 import "../assets/styles/Footer.css";
 import "../assets/styles/Header.css";
+import Favorites from "../components/Favorites";
 import ShoppingList from "../components/ShoppingList";
 
 function Home() {
@@ -34,6 +35,7 @@ function Home() {
   return (
     <>
       <ShoppingList />
+      <Favorites />
       <FormWithButton setNewFetch={setNewFetch} newFetch={newFetch} />
       <main className="main-home">
         <section className="recipe-list">
