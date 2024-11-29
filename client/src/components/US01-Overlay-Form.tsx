@@ -108,11 +108,7 @@ function FormWithButton({ setNewFetch }: FormWithButtonProps) {
         type="button"
         onClick={handleButtonClick}
       >
-        <img
-          className="open-filter-img"
-          src="public/button-icon-burger-menu.png"
-          alt="menu burger"
-        />
+        ☰
       </button>
 
       {isFormVisible && (

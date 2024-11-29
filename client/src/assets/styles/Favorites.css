@@ -1,0 +1,77 @@
+.open-fav-button {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  right: 1%;
+  top: 21%;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(230, 237, 230);
+  box-shadow: 2px 2px 2px rgb(62, 62, 62);
+  cursor: pointer;
+  font-size: 1.1rem;
+  height: 30px;
+  width: 40px;
+  z-index: 1;
+}
+
+.open-fav-button:hover {
+  background-color: #ebf5eb;
+  transform: scale(1.08);
+  cursor: pointer;
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.817);
+}
+
+.favorites-background {
+  position: fixed;
+  top: -3vh;
+  left: -3vw;
+  width: 110vw;
+  height: 110vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  transition: opacity 0.6s ease;
+  opacity: 3;
+  pointer-events: none;
+}
+
+.favorites-list {
+  display: grid;
+  position: fixed;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+  top: 4%;
+  left: 0;
+  z-index: 3;
+  background-color: rgb(193, 206, 193);
+  filter: drop-shadow(-2mm -2mm 3mm #657267);
+  width: 40vw;
+  margin-left: 30%;
+  border-radius: 8px;
+  height: 90vh;
+}
+
+.closing-fav-list-button {
+  justify-self: center;
+  align-self: end;
+  margin: 20px;
+  border-style: none;
+  background-color: rgb(193, 206, 193);
+  font-size: 20px;
+}
+
+.closing-fav-list-button:hover {
+  transform: scale(1.4);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .favorites-list {
+    width: 90vw;
+    margin-left: 5%;
+    height: 80vh;
+    top: 10%;
+  }
+}

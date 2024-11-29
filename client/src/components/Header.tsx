@@ -20,7 +20,7 @@ function Header() {
         <p className="presentation">
           Bienvenue chez Cooked-Up ! Ici, cuisiner devient facile et amusant. Si
           une recette te plaît, clique sur le cœur pour l’ajouter à tes favoris.
-          Prêt(e) à cuisiner ? Ajoute ta recette à ta liste de courses !
+          Prêt(e) à cuisiner ? Ajoute la recette à ta shopping liste !
         </p>
       </section>
       <section className="logo-section">
